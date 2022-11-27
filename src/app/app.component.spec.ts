@@ -22,11 +22,11 @@ describe('AppComponent', () => {
     app = fixture.componentInstance;
   });
 
-  it('should have header, main content and footer', () => {
+  it('should have header, midsection and footer', () => {
     const header = fixture.nativeElement.querySelector('[data-test=header]');
     expect(header).toBeTruthy();
 
-    const content = fixture.nativeElement.querySelector('[data-test=content]');
+    const content = fixture.nativeElement.querySelector('[data-test=midsection]');
     expect(content).toBeTruthy();
 
     const footer = fixture.nativeElement.querySelector('[data-test=footer]');

@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { TopBannerComponent } from './header/top-banner/top-banner.component';
 import { WelcomeBarComponent } from './header/welcome-bar/welcome-bar.component';
 import { LogoBarComponent } from './header/logo-bar/logo-bar.component';
+import { MidsectionComponent } from './midsection/midsection.component';
+import { HeroComponent } from './midsection/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,9 @@ import { LogoBarComponent } from './header/logo-bar/logo-bar.component';
     HeaderComponent,
     TopBannerComponent,
     WelcomeBarComponent,
+    LogoBarComponent,
+    MidsectionComponent,
+    HeroComponent,
     LogoBarComponent
   ],
   imports: [
