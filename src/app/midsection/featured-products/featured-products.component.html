@@ -1,1 +1,13 @@
-<p>featured-products works!</p>
+<div class="featured-products">
+  <div class="featured-product" data-test="featured-product" *ngFor="let product of ['Orange T-Shirt', 'Orange T-Shirt', 'Orange T-Shirt', 'Orange T-Shirt' ]">
+    <div>Image goes here</div>
+    <div>{{ product }}</div>
+    <div>Nike</div>
+    <div>Rating</div>
+    <div><span>{{ 5 | currency: 'EUR' }}</span> <span>{{ 4.99 | currency: 'EUR' }}</span></div>
+  </div>
+</div>
+<div class="product-buttons">
+  <button data-test="previous-button">Previous</button>
+  <button data-test="next-button">Next</button>
+</div>

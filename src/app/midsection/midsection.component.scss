@@ -9,10 +9,11 @@ section-hero {
   .container {
     > * {
       display: flex;
+
     }
 
-    section-special-services {
-      justify-content: center;
+    section-featured-products {
+      flex-wrap: wrap;
     }
   }
 }
