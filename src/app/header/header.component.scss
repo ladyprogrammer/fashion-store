@@ -1,0 +1,10 @@
+header-top-banner {
+  background-color: violet;
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  header-top-banner {
+    display: flex;
+  }
+}

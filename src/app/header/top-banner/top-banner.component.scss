@@ -1,0 +1,15 @@
+
+
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 1024px;
+    display: flex;
+    margin: 0 auto;
+
+    span {
+      flex-grow: 1;
+    }
+  }
+}
+

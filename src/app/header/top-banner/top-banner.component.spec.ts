@@ -17,7 +17,11 @@ describe('TopBannerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have the content and close button', () => {
+    const content = fixture.nativeElement.querySelector('[data-test="content"]');
+    const closeButton = fixture.nativeElement.querySelector('[data-test="close-button"]');
+    expect(content).toBeTruthy();
+    expect(closeButton).toBeTruthy();
+    expect(closeButton).toBeInstanceOf(HTMLButtonElement);
   });
 });
