@@ -1,1 +1,5 @@
-<p>special-services works!</p>
+<div class="special-service" data-test="special-service" *ngFor="let service of ['Free Shipping', 'Free Refund', 'Support 24/7']">
+  <div>giant icon here</div>
+  <div><strong>{{ service }}</strong></div>
+  <div>With &euro;50 or more orders</div>
+</div>

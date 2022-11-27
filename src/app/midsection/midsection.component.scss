@@ -6,7 +6,13 @@ section-hero {
 .featured-section {
   background-color: beige;
 
-  .container > * {
-    display: flex;
+  .container {
+    > * {
+      display: flex;
+    }
+
+    section-special-services {
+      justify-content: center;
+    }
   }
 }

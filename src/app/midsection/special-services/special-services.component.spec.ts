@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { SpecialServicesComponent } from './special-services.component';
 
@@ -17,7 +18,9 @@ describe('SpecialServicesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have the 3 special services', () => {
+    const NUMBER_OF_DISPLAYED_SERVICES = 3;
+    const specialServices = fixture.debugElement.queryAll(By.css('[data-test="special-service"]'));
+    expect(specialServices.length).toEqual(NUMBER_OF_DISPLAYED_SERVICES);
   });
 });
