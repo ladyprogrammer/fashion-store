@@ -8,12 +8,12 @@ header-welcome-bar {
   background-color: cyan;
 }
 
-@media screen and (min-width: 1024px) {
-  header-top-banner {
-    display: block;
-  }
+header-logo-bar {
+  background-color: chartreuse;
+}
 
-  header-welcome-bar {
+@media screen and (min-width: 1024px) {
+  header-top-banner, header-welcome-bar, header-logo-bar {
     display: block;
   }
 }

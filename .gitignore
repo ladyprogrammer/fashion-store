@@ -37,6 +37,7 @@ yarn-error.log
 testem.log
 /typings
 /PSD
+google-icons
 
 # System files
 .DS_Store
