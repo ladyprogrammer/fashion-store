@@ -1,14 +1,26 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HeaderModule } from '../header/header.module';
+import { FeaturedCategoriesComponent } from './featured-categories/featured-categories.component';
+import { FeaturedProductsComponent } from './featured-products/featured-products.component';
+import { HeroComponent } from './hero/hero.component';
 
 import { MidsectionComponent } from './midsection.component';
+import { SpecialServicesComponent } from './special-services/special-services.component';
 
 describe('MidsectionComponent', () => {
   let component: MidsectionComponent;
   let fixture: ComponentFixture<MidsectionComponent>;
+  const unusedComponents = [
+    HeroComponent,
+    SpecialServicesComponent,
+    FeaturedCategoriesComponent,
+    FeaturedProductsComponent
+  ];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MidsectionComponent ]
+      declarations: [ MidsectionComponent, ...unusedComponents ],
+      imports: [ HeaderModule ]
     })
     .compileComponents();
 
