@@ -1,10 +1,53 @@
 .content {
-  width: 50%;
-  display: block;
-  margin: 0 50px;
-  text-align: center;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 265px 0 265px 65px;
 
   h2 {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+
+    > span {
+      font-weight: 800;
+      text-transform: uppercase;
+      display: block;
+      line-height: 0.75;
+      text-align: center;
+    }
+
+    .fashion {
+      font-size: 12.1rem;
+    }
+
+    .carnival {
+      font-size: 12.1rem;
+      color: red;
+    }
+
+    .year {
+      color: black;
+      font-size: 5rem;
+      letter-spacing: 1.5em;
+    }
   }
+
+  p {
+    line-height: 1.5em;
+    text-align: justify;
+  }
+
+  > div {
+    text-align: center;
+
+    button {
+      background-color: red;
+      color: white;
+      font-weight: 900;
+      font-size: 2rem;
+      padding: 15px 20px;
+      border: 0;
+    }
+  }
+
 }

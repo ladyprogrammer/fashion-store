@@ -1,13 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
 html {
+  font-size: 62.5%;
+}
+
+body {
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
 }
 
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .container {
-    width: 1024px;
+    width: 1170px;
     margin: 0 auto;
   }
 }
