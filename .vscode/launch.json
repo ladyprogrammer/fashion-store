@@ -4,10 +4,18 @@
   "configurations": [
     {
       "name": "ng serve",
-      "type": "pwa-chrome",
+      "type": "chrome",
       "request": "launch",
       "preLaunchTask": "npm: start",
       "url": "http://localhost:4200/"
+    },
+    {
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "request": "attach",
+      "type": "chrome",
+      "preLaunchTask": "npm: start",
+      "url": "http://localhost:4200/",
     },
     {
       "name": "ng test",
