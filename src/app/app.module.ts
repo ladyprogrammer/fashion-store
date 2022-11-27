@@ -9,6 +9,9 @@ import { WelcomeBarComponent } from './header/welcome-bar/welcome-bar.component'
 import { LogoBarComponent } from './header/logo-bar/logo-bar.component';
 import { MidsectionComponent } from './midsection/midsection.component';
 import { HeroComponent } from './midsection/hero/hero.component';
+import { FeaturedProductsComponent } from './midsection/featured-products/featured-products.component';
+import { SpecialServicesComponent } from './midsection/special-services/special-services.component';
+import { FeaturedCategoriesComponent } from './midsection/featured-categories/featured-categories.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { HeroComponent } from './midsection/hero/hero.component';
     LogoBarComponent,
     MidsectionComponent,
     HeroComponent,
-    LogoBarComponent
+    FeaturedProductsComponent,
+    SpecialServicesComponent,
+    FeaturedCategoriesComponent
   ],
   imports: [
     BrowserModule,
