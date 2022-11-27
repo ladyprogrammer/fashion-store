@@ -1,1 +1,7 @@
-<p>featured-categories works!</p>
+<div *ngFor="let category of [ 'First Fashion', 'Second Fashion' ]" data-test="featured-category">
+  <div class="featured-category">
+    <h5 data-test="title">{{ category }}</h5>
+    <p data-test="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue consectetur dui nec eleifend. </p>
+    <button data-test="button">Shop Now</button>
+  </div>
+</div>
