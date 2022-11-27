@@ -17,7 +17,14 @@ describe('WelcomeBarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have hello message, email, language and currency', () => {
+    const helloMessage = fixture.nativeElement.querySelector('[data-test="hello-message"]');
+    const email = fixture.nativeElement.querySelector('[data-test="email"]');
+    const language = fixture.nativeElement.querySelector('[data-test="language"]');
+    const currency = fixture.nativeElement.querySelector('[data-test="currency"]');
+    expect(helloMessage).toBeTruthy();
+    expect(email).toBeTruthy();
+    expect(language).toBeTruthy();
+    expect(currency).toBeTruthy();
   });
 });

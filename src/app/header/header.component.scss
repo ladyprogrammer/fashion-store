@@ -3,8 +3,18 @@ header-top-banner {
   display: none;
 }
 
+header-welcome-bar {
+  display: none;
+  background-color: cyan;
+}
+
 @media screen and (min-width: 1024px) {
   header-top-banner {
-    display: flex;
+    display: block;
+  }
+
+  header-welcome-bar {
+    display: block;
   }
 }
+

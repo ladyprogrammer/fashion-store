@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+
+  #welcome-bar-hello {
+    flex-grow: 1;
+  }
+
+  #welcome-bar-email {
+    flex-grow: 2;
+  }
+
+  #welcome-bar-language, #welcome-bar-currency {
+    margin: 10px;
+  }
+
+
+}
+
