@@ -24,10 +24,10 @@ describe('FeaturedProductsComponent', () => {
     expect(products.length).toEqual(NO_OF_DISPLAY_PRODUCTS);
   });
 
-  it('should have previous and next buttons to navigate', () => {
-    const previousButton = fixture.nativeElement.querySelector('[data-test="previous-button"]');
-    const nextButton = fixture.nativeElement.querySelector('[data-test="next-button"]');
-    expect(previousButton).toBeTruthy();
-    expect(nextButton).toBeTruthy();
+  it('should have previous and next to navigate', () => {
+    const previous = fixture.nativeElement.querySelector('[data-test="previous"]');
+    const next = fixture.nativeElement.querySelector('[data-test="next"]');
+    expect(previous).toBeTruthy();
+    expect(next).toBeTruthy();
   });
 });

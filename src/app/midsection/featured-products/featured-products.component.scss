@@ -1,11 +1,83 @@
-.featured-products {
-  display: flex;
-  width: 100%;
-  justify-content: center;
+@import 'src/assets/scss/variables';
+
+@mixin navigation-button {
+  background-color: red;
+  border: 0;
+  border-radius: 10px;
+  width: 22px;
+  height: 22px;
+
+  > svg {
+    fill: white;
+    height: 1.5rem;
+  }
 }
 
-.product-buttons {
+
+
+header {
+  align-self: center;
+  text-align: center;
+
+  .title {
+    font-weight: 900;
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .description {
+    margin: 1rem;
+  }
+}
+
+
+.featured-products {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 50px 50px;
+
+  .featured-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .product {
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+
+    .rating {
+      color: $yellow;
+    }
+
+    .price {
+      > * {
+        margin: 0 5px;
+      }
+
+      .original {
+        text-decoration: line-through;
+        color: grey;
+      }
+
+      .discounted {
+        font-weight: bold;
+      }
+    }
+  }
+
+}
+
+.product-navigation {
   display: flex;
   width: 100%;
   justify-content: center;
+  margin-bottom: 100px;
+
+  .previous, .next {
+    margin: 5px;
+    @include navigation-button();
+  }
+
 }

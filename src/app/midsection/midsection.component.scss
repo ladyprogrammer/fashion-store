@@ -1,3 +1,5 @@
+$white: white;
+
 @mixin extend-categories-background {
   background-color: white;
   margin-top: -150px;
@@ -30,7 +32,8 @@ section-hero {
     }
 
     section-featured-products {
-      flex-wrap: wrap;
+      flex-direction: column;
+      background-color: $white;
     }
   }
 }
