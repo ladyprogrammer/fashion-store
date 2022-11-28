@@ -1,0 +1,41 @@
+$pastelBlue: #D6EEF9;
+$gray: #494949;
+$fuschia: violet;
+$white: white;
+
+.featured-category {
+  margin: 0 20px;
+  background: $pastelBlue url('../../../assets/category1.jpg') no-repeat right;
+  background-size: contain;
+  padding: 5rem 25rem 3.5rem 4rem;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    line-height: 0.85;
+    letter-spacing: -2px;
+
+    > span {
+      font-weight: 800;
+      font-size: 4.8rem;
+    }
+
+    > span:last-child {
+      color: $fuschia;
+    }
+  }
+
+  .content {
+    color: $gray;
+  }
+
+  .shop-button {
+    background: $fuschia;
+    color: $white;
+    border: 0;
+    padding: 1rem 1.5rem;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+}

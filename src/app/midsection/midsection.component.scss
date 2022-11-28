@@ -1,3 +1,9 @@
+@mixin extend-categories-background {
+  background-color: white;
+  margin-top: -150px;
+  padding-top: 200px;
+}
+
 section-hero {
   background: aqua;
   display: block;
@@ -16,6 +22,11 @@ section-hero {
     section-special-services {
       display: flex;
       justify-content: space-evenly;
+    }
+
+    section-featured-categories {
+      padding: 0 10px;
+      @include extend-categories-background();
     }
 
     section-featured-products {
