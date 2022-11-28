@@ -1,20 +1,34 @@
+@mixin translucent-white-background {
+  background-color: rgba(#fff, 0.5);
+  backdrop-filter: opacity(0.5);
+}
+
 header-top-banner {
-  background-color: violet;
   display: none;
 }
 
 header-welcome-bar {
   display: none;
-  background-color: cyan;
 }
 
 header-logo-bar {
-  background-color: chartreuse;
 }
 
 @media screen and (min-width: 1024px) {
   header-top-banner, header-welcome-bar, header-logo-bar {
     display: block;
+  }
+
+  header-top-banner {
+    background: violet url('../../assets/banner-background.jpg') no-repeat;
+  }
+
+  header-welcome-bar {
+    @include translucent-white-background();
+  }
+
+  header-logo-bar {
+    @include translucent-white-background();
   }
 }
 

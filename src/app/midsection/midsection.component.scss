@@ -21,6 +21,8 @@ section-hero {
 
 @media screen and (min-width: 1024px) {
   section-hero {
-    background: aqua url('/assets/hero-background.jpg');
+    background: aqua url('/assets/hero-background.jpg') no-repeat;
+    background-size: cover;
+    margin-top: -12rem;
   }
 }

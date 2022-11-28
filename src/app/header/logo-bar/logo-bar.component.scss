@@ -1,9 +1,29 @@
+$black: #000;
 
+h1 {
+  font-size: 2.6rem;
+  font-weight: 900;
+}
 
+nav {
+  a {
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: $black;
+  }
+}
+
+.search > svg, .shopping-cart > svg, .hamburger-menu > svg {
+  width: 2rem;
+  height: 2rem;
+  padding: 0 1rem;
+}
 
 @media screen and (min-width: 1024px) {
   .container {
     display: flex;
+    align-items: center;
 
     > * {
       display: inline-block;

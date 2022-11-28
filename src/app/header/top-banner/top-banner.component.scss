@@ -6,6 +6,19 @@
 
     span {
       flex-grow: 1;
+      line-height: 7.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    button {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 5rem;
+      border: 0;
+      background-color: white;
+      align-self: center;
+      font-weight: bold;
     }
   }
 }
