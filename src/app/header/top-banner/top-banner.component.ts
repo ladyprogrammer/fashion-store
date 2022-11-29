@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'header-top-banner',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-banner.component.scss']
 })
 export class TopBannerComponent implements OnInit {
+  @ViewChild('container') container!: ElementRef;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  closeBanner() {
+    this.container.nativeElement.remove();
+  }
 }

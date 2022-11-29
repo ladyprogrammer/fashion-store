@@ -1,4 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { TopBannerComponent } from './top-banner.component';
 
@@ -23,5 +24,14 @@ describe('TopBannerComponent', () => {
     expect(content).toBeTruthy();
     expect(closeButton).toBeTruthy();
     expect(closeButton).toBeInstanceOf(HTMLButtonElement);
+  });
+
+  it('should close the banner if close button is clicked', () => {
+    const button = fixture.nativeElement.querySelector('[data-test="close-button"]') as HTMLButtonElement;
+    button.click();
+    fixture.detectChanges();
+
+    const container = fixture.nativeElement.querySelector('[data-test="container"]');
+    expect(container).toBeFalsy();
   });
 });
