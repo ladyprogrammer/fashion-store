@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
 import { MidsectionModule } from './midsection/midsection.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { MidsectionModule } from './midsection/midsection.module';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     HeaderModule,
     MidsectionModule,
     AppRoutingModule

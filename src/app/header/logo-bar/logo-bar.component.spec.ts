@@ -1,13 +1,13 @@
 import { RouterTestingModule } from '@angular/router/testing';
-import { Component, DebugElement } from '@angular/core';
+import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { LogoBarComponent } from './logo-bar.component';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { DummyComponent } from '@shared/dummy/dummy.component';
 
-@Component({ selector: 'mock', template: '' }) export class DummyComponent {}
 const routes = [
   { path: '', component: DummyComponent },
   { path: 'shop', component: DummyComponent },
@@ -17,7 +17,7 @@ const routes = [
   { path: 'page', component: DummyComponent },
 ];
 
-describe('LogoBarComponent', () => {
+fdescribe('LogoBarComponent', () => {
   let component: LogoBarComponent;
   let fixture: ComponentFixture<LogoBarComponent>;
   let logo: DebugElement;
@@ -74,6 +74,52 @@ describe('LogoBarComponent', () => {
 
     // expect(location.path()).toEqual('');
     expect(logoAnchor.attributes['href']).toEqual('/');
+  });
+
+  it('should have working top menu links', () => {
+    const menuItems = [
+      { name: 'Home', link: '/' },
+      { name: 'Shop', link: '/shop' },
+      { name: 'Product', link: '/product' },
+      { name: 'Blog', link: '/blog' },
+      { name: 'Portfolio', link: '/portfolio' },
+      { name: 'Page', link: '/page' }
+    ];
+
+    const topMenu = fixture.debugElement.query(By.css('[data-test="menu"]'));
+    topMenu.queryAll(By.css('li a')).forEach( (menuItem, index) => {
+      expect(menuItem.attributes['href']).toEqual(menuItems[index].link);
+      expect(menuItem.nativeElement.innerText).toEqual(menuItems[index].name);
+    });
+  });
+
+  xit('should go to destination routes', () => {
+    const menuItems = [
+      { name: 'Home', link: '/' },
+      { name: 'Shop', link: '/shop' },
+      { name: 'Product', link: '/product' },
+      { name: 'Blog', link: '/blog' },
+      { name: 'Portfolio', link: '/portfolio' },
+      { name: 'Page', link: '/page' }
+    ];
+    const topMenu = fixture.debugElement.query(By.css('[data-test="menu"]'));
+
+    const navigateSpy = spyOn(router, 'navigateByUrl');
+    menuItems.forEach( (menuItem, index) => {
+      console.log(index);
+      const anchorLink = topMenu.query(By.css(`[href="${menuItem.link}"]`));
+      // console.log(anchorLink);
+
+      (anchorLink.nativeElement as HTMLAnchorElement).click();
+      // anchorLink.triggerEventHandler('click', {});
+      fixture.detectChanges();
+
+      const url = navigateSpy.calls.first().args[0];
+      console.log(url.toString(), url);
+
+      // router.navigate(['/blog']);
+      expect(url).toBe(menuItem.link);
+    } );
   });
 });
 
