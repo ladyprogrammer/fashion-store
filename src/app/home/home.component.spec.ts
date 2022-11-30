@@ -4,12 +4,12 @@ import { FeaturedCategoriesComponent } from './featured-categories/featured-cate
 import { FeaturedProductsComponent } from './featured-products/featured-products.component';
 import { HeroComponent } from './hero/hero.component';
 
-import { MidsectionComponent } from './midsection.component';
+import { HomeComponent } from './home.component';
 import { SpecialServicesComponent } from './special-services/special-services.component';
 
-describe('MidsectionComponent', () => {
-  let component: MidsectionComponent;
-  let fixture: ComponentFixture<MidsectionComponent>;
+describe('HomeComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
   const unusedComponents = [
     HeroComponent,
     SpecialServicesComponent,
@@ -19,12 +19,12 @@ describe('MidsectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MidsectionComponent, ...unusedComponents ],
+      declarations: [ HomeComponent, ...unusedComponents ],
       imports: [ HeaderModule ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MidsectionComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
