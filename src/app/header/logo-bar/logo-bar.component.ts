@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'header-logo-bar',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./logo-bar.component.scss']
 })
 export class LogoBarComponent implements OnInit {
+  isShowSearch = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openSearchModal(): void {
+    this.isShowSearch = ! this.isShowSearch;
   }
 
 }

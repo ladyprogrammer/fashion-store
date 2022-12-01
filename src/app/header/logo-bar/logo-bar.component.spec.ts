@@ -17,7 +17,7 @@ const routes = [
   { path: 'page', component: DummyComponent },
 ];
 
-fdescribe('LogoBarComponent', () => {
+describe('LogoBarComponent', () => {
   let component: LogoBarComponent;
   let fixture: ComponentFixture<LogoBarComponent>;
   let logo: DebugElement;
@@ -120,6 +120,12 @@ fdescribe('LogoBarComponent', () => {
       // router.navigate(['/blog']);
       expect(url).toBe(menuItem.link);
     } );
+  });
+
+  xit('should show a popup when magnify icon is clicked', () => {
+    // const container = fixture.nativeElement.querySelector('.container') as HTMLDivElement;
+    // const div = document.createElement('div');
+    // container.append(div);
   });
 });
 

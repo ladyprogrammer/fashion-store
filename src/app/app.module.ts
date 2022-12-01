@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
 import { MidsectionModule } from './midsection/midsection.module';
 import { SharedModule } from './shared/shared.module';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SearchResultComponent,
   ],
   imports: [
     BrowserModule,

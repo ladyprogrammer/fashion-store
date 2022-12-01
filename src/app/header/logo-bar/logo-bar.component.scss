@@ -24,6 +24,21 @@ nav {
   padding: 0 1rem;
 }
 
+.search {
+  position: relative;
+
+  modal-search {
+    position: absolute;
+    background: white;
+    right: 0;
+    top: 50px;
+    width: 200px;
+    z-index: 100000;
+  }
+}
+
+
+
 @media screen and (min-width: 1024px) {
   .container {
     display: flex;
