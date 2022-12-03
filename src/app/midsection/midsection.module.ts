@@ -7,6 +7,7 @@ import { FeaturedProductsComponent } from '../home/featured-products/featured-pr
 import { HeroComponent } from '../home/hero/hero.component';
 import { HomeComponent } from '../home/home.component';
 import { SpecialServicesComponent } from '../home/special-services/special-services.component';
+import { SharedModule } from '@shared/shared.module';
 
 
 @NgModule({
@@ -15,10 +16,11 @@ import { SpecialServicesComponent } from '../home/special-services/special-servi
     HeroComponent,
     SpecialServicesComponent,
     FeaturedCategoriesComponent,
-    FeaturedProductsComponent
+    FeaturedProductsComponent,
   ],
   imports: [
     CommonModule,
+    SharedModule,
     MidsectionRoutingModule
   ],
   exports: [

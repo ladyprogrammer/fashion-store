@@ -1,4 +1,4 @@
-import { Component, isDevMode, OnInit } from '@angular/core';
+import { Component, isDevMode, OnInit, ViewEncapsulation } from '@angular/core';
 import { tap } from 'rxjs';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
@@ -6,7 +6,8 @@ import { ProductService } from 'src/app/services/product.service';
 @Component({
   selector: 'section-featured-products',
   templateUrl: './featured-products.component.html',
-  styleUrls: ['./featured-products.component.scss']
+  styleUrls: ['./featured-products.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class FeaturedProductsComponent implements OnInit {
   featuredProducts!: Product[];

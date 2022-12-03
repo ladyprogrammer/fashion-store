@@ -48,7 +48,13 @@ header {
     }
 
     .rating {
-      color: $yellow;
+      width: 100%;
+      text-align: center;
+
+      > svg {
+        width: 25px;
+        fill: $yellow;
+      }
     }
 
     .price {
