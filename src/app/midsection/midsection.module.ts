@@ -8,6 +8,8 @@ import { HeroComponent } from '../home/hero/hero.component';
 import { HomeComponent } from '../home/home.component';
 import { SpecialServicesComponent } from '../home/special-services/special-services.component';
 import { SharedModule } from '@shared/shared.module';
+import { ProductsPageNextComponent } from '../home/featured-products/products-page-next/products-page-next.component';
+import { ProductsPagePreviousComponent } from '../home/featured-products/products-page-previous/products-page-previous.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { SharedModule } from '@shared/shared.module';
     SpecialServicesComponent,
     FeaturedCategoriesComponent,
     FeaturedProductsComponent,
+    ProductsPagePreviousComponent,
+    ProductsPageNextComponent,
   ],
   imports: [
     CommonModule,

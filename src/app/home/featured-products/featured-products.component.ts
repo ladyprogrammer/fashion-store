@@ -11,6 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class FeaturedProductsComponent implements OnInit {
   featuredProducts!: Product[];
+  isDefault = true;
 
   constructor(
     private productService: ProductService
@@ -28,6 +29,14 @@ export class FeaturedProductsComponent implements OnInit {
       .subscribe(
         (products) => this.featuredProducts = products
       );
+  }
+
+  showNext(): void {
+    this.isDefault = false;
+  }
+
+  showPrevious(): void {
+    this.isDefault = true;
   }
 
 }

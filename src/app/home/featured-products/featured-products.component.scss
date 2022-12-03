@@ -33,9 +33,11 @@ header {
 
 
 .featured-products {
+  > * {
   display: flex;
   justify-content: space-between;
   margin: 0 50px 50px;
+  }
 
   .featured-product {
     display: flex;
@@ -84,6 +86,10 @@ header {
   .previous, .next {
     margin: 5px;
     @include navigation-button();
+  }
+
+  .disabled {
+    background-color: grey;
   }
 
 }
