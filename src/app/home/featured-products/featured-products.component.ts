@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, isDevMode, OnInit } from '@angular/core';
+import { tap } from 'rxjs';
+import { Product } from 'src/app/models/product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'section-featured-products',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./featured-products.component.scss']
 })
 export class FeaturedProductsComponent implements OnInit {
+  featuredProducts!: Product[];
 
-  constructor() { }
+  constructor(
+    private productService: ProductService
+  ) { }
 
   ngOnInit(): void {
+    this.displayProducts()
+  }
+
+  displayProducts(): void {
+    this.productService.getProducts()
+      .pipe(
+        tap( (products) => { if ( isDevMode() ) { console.log('[ProductService] displayProducts()', products) } })
+      )
+      .subscribe(
+        (products) => this.featuredProducts = products
+      );
   }
 
 }

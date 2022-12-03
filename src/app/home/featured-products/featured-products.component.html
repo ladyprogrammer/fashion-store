@@ -4,14 +4,14 @@
 </header>
 
 <section class="featured-products">
-  <div class="featured-product" data-test="featured-product" *ngFor="let product of ['Orange T-Shirt', 'Orange T-Shirt', 'Orange T-Shirt', 'Orange T-Shirt' ]">
-    <div><img src="assets/product1.jpg" /></div>
-    <div class="product">{{ product }}</div>
-    <div class="brand">Nike</div>
-    <div class="rating">4.5</div>
+  <div class="featured-product" data-test="featured-product" *ngFor="let product of featuredProducts">
+    <div><img src="{{ product.imageUrl }}" /></div>
+    <div class="product">{{ product.name }}</div>
+    <div class="brand">{{ product.brand }}</div>
+    <div class="rating">{{ 4.5 }}</div>
     <div class="price">
-      <span class="original">{{ 5 | currency: 'USD' }}</span>
-      <span class="discounted">{{ 4.99 | currency: 'USD' }}</span>
+      <span class="original">{{ product.originalPrice| currency: 'USD' }}</span>
+      <span class="discounted">{{ product.discountedPrice| currency: 'USD' }}</span>
     </div>
   </div>
 </section>

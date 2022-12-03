@@ -7,6 +7,21 @@ import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@
 })
 export class LogoBarComponent implements OnInit {
   isShowSearch = false;
+  isInside = false;
+
+  @HostListener('click') onClick() {
+    this.isInside = true;
+  }
+
+  @HostListener('document:click') bigClick() {
+    if (this.isInside) {
+      this.isInside = false;
+    }
+    else {
+      this.isShowSearch = false;
+    }
+  }
+
 
   constructor() { }
 

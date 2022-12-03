@@ -6,7 +6,7 @@ import { LogoBarComponent } from './logo-bar/logo-bar.component';
 import { TopBannerComponent } from './top-banner/top-banner.component';
 import { WelcomeBarComponent } from './welcome-bar/welcome-bar.component';
 import { HeaderComponent } from './header.component';
-import { SearchComponent } from './search/search.component';
+import { SearchComponent } from './logo-bar/search/search.component';
 
 
 @NgModule({
