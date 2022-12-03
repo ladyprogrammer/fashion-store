@@ -8,6 +8,10 @@ import { MidsectionModule } from './midsection/midsection.module';
 import { SharedModule } from './shared/shared.module';
 import { SearchResultComponent } from './search-result/search-result.component';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientModule } from '@angular/common/http';
+import { InMemoryDataService } from './mock-data/in-memory-data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +22,10 @@ import { SearchResultComponent } from './search-result/search-result.component';
     SharedModule,
     HeaderModule,
     MidsectionModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
     AppRoutingModule
   ],
   providers: [],
