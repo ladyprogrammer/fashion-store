@@ -1,13 +1,27 @@
 import { Location } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'demo-dummy',
-  template: '<div>Just a dummy component</div><div>{{ location.path() }}</div>',
-  styles: [ 'div { text-align: center; margin-top: 10rem; }' ]
+  templateUrl: './dummy.component.html',
+  styleUrls: [ './dummy.component.scss' ]
 })
-export class DummyComponent {
+export class DummyComponent implements OnInit {
+  path: string;
+  
   constructor(
-    protected location: Location
-  ) {}
+    private location: Location,
+  ) {
+    this.path = location.path();
+  }
+
+  ngOnInit(): void {
+    this.location.subscribe(
+      (currentLocation) => this.path = currentLocation.url ?? 'no path'
+    );
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
 }

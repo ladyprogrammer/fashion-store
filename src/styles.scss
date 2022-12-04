@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'variables' as var;
+@use 'mixins' as mix;
 
 $container-width: 1170px;
 $font-family: 'Montserrat', sans-serif;
@@ -18,8 +19,14 @@ body {
 a {
   text-decoration: none;
   color: var.$black;
+  cursor: pointer;
 }
 
+button {
+  @include mix.primary-button();
+  cursor: pointer;
+  align-self: center;
+}
 
 @media screen and (min-width: var.$large-desktop-breakpoint) {
   .container {

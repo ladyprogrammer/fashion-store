@@ -1,5 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { HeaderModule } from '../header/header.module';
 import { FeaturedCategoriesComponent } from './featured-categories/featured-categories.component';
 import { FeaturedProductsComponent } from './featured-products/featured-products.component';
@@ -25,7 +26,7 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HomeComponent, ...unusedComponents ],
-      imports: [ HeaderModule, HttpClientTestingModule ]
+      imports: [ HeaderModule, HttpClientTestingModule, RouterTestingModule ]
     })
     .compileComponents();
 
