@@ -1,5 +1,15 @@
-<div *ngFor="let category of [ 'First', 'Second' ]" class="featured-category" data-test="featured-category">
-  <h5 data-test="title" class="title"><span>Fashion</span><span>Carnival</span></h5>
-  <p data-test="content" class="content">Lorem Ipsum. Proin gravida nibh velit it’s a cold world</p>
+<div *ngFor="let category of categories" class="featured-category" 
+  data-test="featured-category" 
+  [ngStyle]="{ 
+    'background': 'transparent url(' + category.backgroundImageUrl + ') no-repeat right',
+    'background-size': 'contain'
+   }">
+  <h5 data-test="title" class="title">
+    <span>{{ category.titleLine1 }}</span>
+    <span>{{ category.titleLine2 }}</span>
+  </h5>
+  <p data-test="content" class="content">
+    {{ category.content }}
+  </p>
   <button data-test="button" class="shop-button">Shop Now</button>
 </div>

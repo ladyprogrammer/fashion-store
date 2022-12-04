@@ -2,12 +2,21 @@
 @use 'mixins' as mix;
 
 $category-image-url-1: 'category1.jpg';
+$category-image-url-2: 'category2.jpg';
 
 .featured-category {
-  margin: 0 20px;
-  background: var.$pastel-blue url(var.$featured-category-url + $category-image-url-1) no-repeat right;
+  margin: 0 2rem 2rem;
+  // background: var.$pastel-blue;
   background-size: contain;
   padding: 5rem 25rem 3.5rem 4rem;
+
+  .featured-category-1 {
+    background: transparent url(var.$featured-category-url + $category-image-url-1) no-repeat right;
+  }
+
+  .featured-category-2 {
+    background: transparent url(var.$featured-category-url + $category-image-url-2) no-repeat right;
+  }
 
   .title {
     display: flex;

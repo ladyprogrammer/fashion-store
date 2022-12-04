@@ -27,7 +27,7 @@ header {
   }
 
   .description {
-    margin: 1rem;
+    margin: 1.5rem 0 2.5rem;
   }
 }
 
@@ -36,17 +36,23 @@ header {
   > * {
   display: flex;
   justify-content: space-between;
-  margin: 0 50px 50px;
+  margin: 0 5rem;
   }
 
   .featured-product {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0 3rem;
 
     .product {
       font-weight: bold;
       font-size: 1.8rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .brand {
+      margin-bottom: 2rem;
     }
 
     .rating {
@@ -54,22 +60,22 @@ header {
       text-align: center;
 
       > svg {
-        width: 25px;
+        width: 2.5rem;
         fill: $yellow;
       }
     }
 
     .price {
-      > * {
-        margin: 0 5px;
-      }
+      margin-top: 1rem;
 
       .original {
+        margin: 0;
         text-decoration: line-through;
         color: grey;
       }
 
       .discounted {
+        margin: 0;
         font-weight: bold;
       }
     }
@@ -81,10 +87,10 @@ header {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-bottom: 100px;
+  margin: 5.5rem 0 10rem;
 
   .previous, .next {
-    margin: 5px;
+    margin: 0.5rem;
     @include navigation-button();
   }
 

@@ -4,8 +4,7 @@ $hero-background-image: var.$background-url + 'hero-background.jpg';
 
 @mixin extend-categories-background {
   background-color: var.$white;
-  margin-top: -150px;
-  padding-top: 200px;
+  margin-top: -15rem;
 }
 
 
@@ -17,12 +16,7 @@ section-hero {
 .featured-section {
 
   .container {
-    margin-top: -100px;
-
-    > * {
-      display: flex;
-
-    }
+    margin-top: -10rem;
 
     section-special-services {
       display: flex;
@@ -30,21 +24,23 @@ section-hero {
     }
 
     section-featured-categories {
-      padding: 0 10px;
+      display: flex;
+      padding: 20rem 1rem 11rem;
       @include extend-categories-background();
     }
 
     section-featured-products {
+      display: flex;
       flex-direction: column;
       background-color: var.$white;
     }
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: var.$desktop-breakpoint) {
   section-hero {
     background: var.$aqua url($hero-background-image) no-repeat;
     background-size: cover;
-    margin-top: -15.1rem;
+    margin-top: -15.2rem;
   }
 }
