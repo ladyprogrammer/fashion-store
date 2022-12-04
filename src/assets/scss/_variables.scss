@@ -1,14 +1,17 @@
 $white: white;
 $yellow: #ffc808;
-$violet: violet;
 $beige: beige;
 $fushcia: #f9236f;
 $black: black;
 $aqua: rgb(186, 232, 255);
+$pastel-blue: #D6EEF9;
+$gray: #494949;
 
 // breakpoints
 $desktop-breakpoint: 1024px;
 $large-desktop-breakpoint: 1200px;
 
-$background-url: '../../assets/backgrounds/';
+// image locations
+$background-url: "/assets/backgrounds/";
+$featured-category-url: "/assets/featured-categories/";
 

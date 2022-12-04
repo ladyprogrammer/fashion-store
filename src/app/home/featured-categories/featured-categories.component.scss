@@ -1,11 +1,11 @@
-$pastelBlue: #D6EEF9;
-$gray: #494949;
-$fuschia: violet;
-$white: white;
+@use 'variables' as var;
+@use 'mixins' as mix;
+
+$category-image-url-1: 'category1.jpg';
 
 .featured-category {
   margin: 0 20px;
-  background: $pastelBlue url('../../../assets/category1.jpg') no-repeat right;
+  background: var.$pastel-blue url(var.$featured-category-url + $category-image-url-1) no-repeat right;
   background-size: contain;
   padding: 5rem 25rem 3.5rem 4rem;
 
@@ -22,20 +22,15 @@ $white: white;
     }
 
     > span:last-child {
-      color: $fuschia;
+      color: var.$fushcia;
     }
   }
 
   .content {
-    color: $gray;
+    color: var.$gray;
   }
 
   .shop-button {
-    background: $fuschia;
-    color: $white;
-    border: 0;
-    padding: 1rem 1.5rem;
-    font-weight: 900;
-    font-size: 2rem;
+    @include mix.primary-button();
   }
 }

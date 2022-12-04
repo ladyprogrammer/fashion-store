@@ -8,7 +8,7 @@ export const mockFeaturedProducts: Product[] = [
     rating: 4.5,
     originalPrice: 74,
     discountedPrice: 69,
-    imageUrl: 'assets/product1.jpg'
+    imageUrl: 'product1.jpg'
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const mockFeaturedProducts: Product[] = [
     rating: 4.3,
     originalPrice: 75,
     discountedPrice: 68,
-    imageUrl: 'assets/product2.jpg'
+    imageUrl: 'product2.jpg'
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const mockFeaturedProducts: Product[] = [
     rating: 4.8,
     originalPrice: 76,
     discountedPrice: 67,
-    imageUrl: 'assets/product3.jpg'
+    imageUrl: 'product3.jpg'
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const mockFeaturedProducts: Product[] = [
     rating: 3,
     originalPrice: 74,
     discountedPrice: 69,
-    imageUrl: 'assets/product4.jpg'
+    imageUrl: 'product4.jpg'
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ export const mockFeaturedProducts: Product[] = [
     rating: 4.5,
     originalPrice: 74,
     discountedPrice: 69,
-    imageUrl: 'assets/product5.jpg'
+    imageUrl: 'product5.jpg'
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ export const mockFeaturedProducts: Product[] = [
     rating: 4.5,
     originalPrice: 74,
     discountedPrice: 69,
-    imageUrl: 'assets/product6.jpg'
+    imageUrl: 'product6.jpg'
   },
   {
     id: 7,
@@ -62,7 +62,7 @@ export const mockFeaturedProducts: Product[] = [
     rating: 4.5,
     originalPrice: 74,
     discountedPrice: 69,
-    imageUrl: 'assets/product7.jpg'
+    imageUrl: 'product7.jpg'
   },
   {
     id: 8,
@@ -71,7 +71,7 @@ export const mockFeaturedProducts: Product[] = [
     rating: 4.5,
     originalPrice: 74,
     discountedPrice: 69,
-    imageUrl: 'assets/product8.jpg'
+    imageUrl: 'product8.jpg'
   },
 
 ];

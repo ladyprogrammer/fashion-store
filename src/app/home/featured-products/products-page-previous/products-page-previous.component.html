@@ -1,5 +1,5 @@
 <div class="featured-product" data-test="featured-product" *ngFor="let product of featuredProducts?.slice(0, 4)">
-  <div><img src="{{ product.imageUrl }}" /></div>
+  <div><img src="/assets/products/{{ product.imageUrl }}" /></div>
   <div class="product">{{ product.name }}</div>
   <div class="brand">{{ product.brand }}</div>
   <div class="rating"  [innerHTML]="4.5 | rating"></div>
