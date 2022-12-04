@@ -1,23 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'variables' as var;
 
+$container-width: 1170px;
+$font-family: 'Montserrat', sans-serif;
+
+
+// do not change, this is for convenience in converting px to rem
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; // 10px = 1 rem
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.6rem;
-  background-color: beige;
+  font: 1.6rem $font-family;
+  background-color: var.$beige;
 }
 
 a {
   text-decoration: none;
+  color: var.$black;
 }
 
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: var.$large-desktop-breakpoint) {
   .container {
-    width: 1170px;
+    width: $container-width;
     margin: 0 auto;
   }
 }

@@ -1,6 +1,6 @@
+@use 'variables' as var;
 
-
-@media screen and (min-width: 1024px) {
+// @media screen and (min-width: var.$desktop-breakpoint) {
   .container {
     display: flex;
 
@@ -8,7 +8,7 @@
       flex-grow: 1;
       line-height: 7.5rem;
       font-weight: bold;
-      color: white;
+      color: var.$white;
     }
 
     button {
@@ -16,10 +16,10 @@
       height: 5rem;
       border-radius: 5rem;
       border: 0;
-      background-color: white;
+      background-color: var.$white;
       align-self: center;
       font-weight: bold;
     }
   }
-}
+// }
 

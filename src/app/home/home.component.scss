@@ -1,13 +1,16 @@
-$white: white;
+@use 'variables' as var;
+
+$hero-background-image: var.$background-url + 'hero-background.jpg';
 
 @mixin extend-categories-background {
-  background-color: white;
+  background-color: var.$white;
   margin-top: -150px;
   padding-top: 200px;
 }
 
+
 section-hero {
-  background: aqua;
+  background: var.$white;
   display: block;
 }
 
@@ -33,15 +36,15 @@ section-hero {
 
     section-featured-products {
       flex-direction: column;
-      background-color: $white;
+      background-color: var.$white;
     }
   }
 }
 
 @media screen and (min-width: 1024px) {
   section-hero {
-    background: aqua url('/assets/hero-background.jpg') no-repeat;
+    background: var.$aqua url($hero-background-image) no-repeat;
     background-size: cover;
-    margin-top: -12rem;
+    margin-top: -15.1rem;
   }
 }

@@ -1,0 +1,22 @@
+@use 'variables' as var;
+
+@mixin hide-element() {
+  display: none;
+}
+
+@mixin show-element($display-type: block) {
+  display: $display-type;
+}
+
+@mixin default-button($padding-x: 15px, $padding-y: 20px) {
+  font-weight: 900;
+  font-size: 2rem;
+  padding: $padding-x $padding-y;
+  border: 0;
+}
+
+@mixin primary-button($padding-x: 15px, $padding-y: 20px) {
+  @include default-button($padding-x, $padding-y);
+  background-color: var.$fushcia;
+  color: var.$white;
+}

@@ -1,5 +1,17 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+
+@mixin word-format {
+  font-weight: 800;
+  text-transform: uppercase;
+  display: block;
+  line-height: 0.75;
+  text-align: center;
+  margin-left: -40px;   // remove space that is naturally present in the character from container
+}
+
 .content {
-  width: 60%;
+  width: 600px;
   display: flex;
   flex-direction: column;
   padding: 265px 0 265px 65px;
@@ -8,27 +20,26 @@
     display: flex;
     flex-direction: column;
 
-    > span {
-      font-weight: 800;
-      text-transform: uppercase;
-      display: block;
-      line-height: 0.75;
-      text-align: center;
-    }
-
     .fashion {
+      @include word-format();
       font-size: 12.1rem;
+      letter-spacing: -10px;
     }
 
     .carnival {
+      @include word-format();
       font-size: 12.1rem;
-      color: red;
+      letter-spacing: -10px;
+      color: var.$fushcia;
     }
 
     .year {
-      color: black;
+      @include word-format();
+      color: var.$black;
       font-size: 5rem;
-      letter-spacing: 1.5em;
+      letter-spacing: 75px;
+      margin-left: 60px;
+      text-align: center;
     }
   }
 
@@ -37,17 +48,10 @@
     text-align: justify;
   }
 
-  > div {
-    text-align: center;
-
-    button {
-      background-color: red;
-      color: white;
-      font-weight: 900;
-      font-size: 2rem;
-      padding: 15px 20px;
-      border: 0;
-    }
+  button {
+    @include mix.primary-button(15px, 20px);
+    width: 200px;
+    align-self: center;
   }
 
 }
