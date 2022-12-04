@@ -1,7 +1,10 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderModule } from '../header/header.module';
 import { FeaturedCategoriesComponent } from './featured-categories/featured-categories.component';
 import { FeaturedProductsComponent } from './featured-products/featured-products.component';
+import { ProductsPageNextComponent } from './featured-products/products-page-next/products-page-next.component';
+import { ProductsPagePreviousComponent } from './featured-products/products-page-previous/products-page-previous.component';
 import { HeroComponent } from './hero/hero.component';
 
 import { HomeComponent } from './home.component';
@@ -14,13 +17,15 @@ describe('HomeComponent', () => {
     HeroComponent,
     SpecialServicesComponent,
     FeaturedCategoriesComponent,
-    FeaturedProductsComponent
+    FeaturedProductsComponent,
+    ProductsPagePreviousComponent,
+    ProductsPageNextComponent,
   ];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HomeComponent, ...unusedComponents ],
-      imports: [ HeaderModule ]
+      imports: [ HeaderModule, HttpClientTestingModule ]
     })
     .compileComponents();
 
