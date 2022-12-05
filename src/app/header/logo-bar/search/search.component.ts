@@ -9,7 +9,7 @@ import { SearchService } from 'src/app/senvices/search.service';
   // encapsulation: ViewEncapsulation.None
 })
 export class SearchComponent implements OnInit {
-  searchResult!: any[];
+  searchResult!: any[];   // TODO: refactor any
   isSearch!: boolean;
 
   constructor(

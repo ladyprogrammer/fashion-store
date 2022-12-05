@@ -6,38 +6,42 @@ import { SvgIcons } from './svg-icons';
   name: 'rating'
 })
 export class RatingPipe implements PipeTransform {
-  starIconFull: SafeHtml;
-  starIconHalf: SafeHtml;
-  starIconEmpty: SafeHtml;
 
   constructor(
     private sanitizer: DomSanitizer
-  ) {
-    this.starIconFull = this.sanitizer.bypassSecurityTrustHtml(SvgIcons.FULL_STAR);
-    this.starIconHalf = this.sanitizer.bypassSecurityTrustHtml(SvgIcons.HALF_STAR);
-    this.starIconEmpty = this.sanitizer.bypassSecurityTrustHtml(SvgIcons.EMPTY_STAR);
-  }
+  ) {}
 
   transform(value: number) {
-    const stars = this.numberToStars(value);
+    const stars = this.convertNumberToStars(value);
     return this.sanitizer.bypassSecurityTrustHtml(stars);
   }
 
-  numberToStars(value: number): string {
-    let stars = '';
+  private convertNumberToStars(value: number): string {
     const fullStars = Math.floor(value);
-    let halfStar = (value - fullStars) > 0.5 ? 1 : ((value - fullStars) < 0.5 ? 0 : 0.5 );
+    let halfStar = this.getHalfStarValue(value, fullStars);
+
+    let stars = '';
     for(let i = 1; i <= 5; i++) {
-      if (i <= fullStars) {
-        stars += this.starIconFull;
-      } else if (halfStar) {
-        stars += (halfStar === 0.5) ? this.starIconHalf : this.starIconFull;
-        halfStar = 0;
-      } else {
-        stars += this.starIconEmpty;
-      }
+      stars += this.getStar(fullStars, halfStar, i);
     }
     return stars;
+  }
+
+  private getStar(fullStars: number, halfStar: number, index: number): string {
+    if (index <= fullStars) {
+      return SvgIcons.FULL_STAR;
+    } else if (halfStar) {
+      return (halfStar === 0.5) ? SvgIcons.HALF_STAR : SvgIcons.FULL_STAR;
+    } else {
+      return SvgIcons.EMPTY_STAR;
+    }
+  }
+
+  private getHalfStarValue(rating: number, fullStars: number): number {
+    const fraction = rating - fullStars;
+    const zeroOrHalf = ( fraction < 0.5 ) ? 0 : 0.5;
+    const fullOrZeroHalf = ( fraction > 0.5 ) ? 1 : zeroOrHalf;
+    return fullOrZeroHalf;
   }
 
 }

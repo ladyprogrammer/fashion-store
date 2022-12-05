@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./search-result.component.scss']
 })
 export class SearchResultComponent implements OnInit {
-  result!: any[];
+  result!: any[];   // TODO: refactor any
 
   constructor(
     private searchService: SearchService

@@ -8,8 +8,8 @@ import { SvgIcons } from '@shared/svg-icons';
   styleUrls: ['./logo-bar.component.scss']
 })
 export class LogoBarComponent implements OnInit {
-  isShowSearch = false;
-  isInside = false;
+  isShowSearch: boolean;
+  isInside: boolean;
   searchIcon: SafeHtml;
   shoppingCartIcon: SafeHtml;
   hamburgerIcon: SafeHtml;
@@ -31,6 +31,8 @@ export class LogoBarComponent implements OnInit {
   constructor(
     private domSanitizer: DomSanitizer
   ) {
+    this.isShowSearch = false;
+    this.isInside = false;
     this.searchIcon = this.domSanitizer.bypassSecurityTrustHtml(SvgIcons.SEARCH);
     this.shoppingCartIcon = this.domSanitizer.bypassSecurityTrustHtml(SvgIcons.SHOPPING_CART);
     this.hamburgerIcon = this.domSanitizer.bypassSecurityTrustHtml(SvgIcons.HAMBURGER);

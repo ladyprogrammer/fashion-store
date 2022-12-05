@@ -5,28 +5,23 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
   templateUrl: './featured-categories.component.html',
   styleUrls: ['./featured-categories.component.scss']
 })
-export class FeaturedCategoriesComponent implements AfterViewInit {
-  categories;
-  black = '#999';
-  image = '/assets/featured-categories/category1.jpg';
+export class FeaturedCategoriesComponent {
+  categories: { titleLine1: string, titleLine2: string, content: string, backgroundImageUrl: string } []; // TODO: object
 
   constructor() {
     this.categories = [
       {
         titleLine1: 'Fashion',
         titleLine2: 'Carousel',
-        content: 'Lorem Ipsum. Proin gravida nibh velit it’s a cold world',
+        content: "Lorem Ipsum. Proin gravida nibh velit it’s a cold world",
         backgroundImageUrl: '/assets/featured-categories/category1.jpg' 
       },
       {
         titleLine1: 'Fashion',
         titleLine2: 'Carousel',
-        content: 'Lorem Ipsum. Proin gravida nibh velit it’s a cold world',
+        content: "Lorem Ipsum. Proin gravida nibh velit it’s a cold world",
         backgroundImageUrl: '/assets/featured-categories/category2.jpg' 
       }
     ];
-  }
-  ngAfterViewInit(): void {
-    // document.querySelector('.featured-category')?.setAttribute('style', 'background: blue');
   }
 }

@@ -9,7 +9,7 @@ export class SearchService {
   constructor() { }
 
   getProducts(searchText?: string): Observable<any[]> {
-    return of([
+    return of([   // TODO: merge with productService
       { id: 1, name: 'one'},
       { id: 2, name: 'two'},
     ]);
