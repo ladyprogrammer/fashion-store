@@ -2,7 +2,7 @@ import { Component, isDevMode, OnInit, ViewEncapsulation } from '@angular/core';
 import { tap } from 'rxjs';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
-import { SVG, SvgIcons } from '@shared/svg-icons';
+import { SvgIcons } from '@shared/svg-icons';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
@@ -19,11 +19,11 @@ export class FeaturedProductsComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private domSanitizer: DomSanitizer
+    private sanitizer: DomSanitizer
   ) {
     this.isDefault = true;
-    this.leftCaretIcon = this.sanitizeHtml(SvgIcons.LEFT_CARET);
-    this.rightCaretIcon = this.sanitizeHtml(SvgIcons.RIGHT_CARET);
+    this.leftCaretIcon = this.sanitizer.bypassSecurityTrustHtml(SvgIcons.LEFT_CARET);
+    this.rightCaretIcon = this.sanitizer.bypassSecurityTrustHtml(SvgIcons.RIGHT_CARET);
   }
 
   ngOnInit(): void {
@@ -46,10 +46,6 @@ export class FeaturedProductsComponent implements OnInit {
 
   showPrevious(): void {
     this.isDefault = true;
-  }
-
-  private sanitizeHtml(html: string): SafeHtml {
-    return this.domSanitizer.bypassSecurityTrustHtml(html);
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { SvgIcons } from '@shared/svg-icons';
 
 @Component({
   selector: 'header-logo-bar',
@@ -8,6 +10,9 @@ import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@
 export class LogoBarComponent implements OnInit {
   isShowSearch = false;
   isInside = false;
+  searchIcon: SafeHtml;
+  shoppingCartIcon: SafeHtml;
+  hamburgerIcon: SafeHtml;
 
   @HostListener('click') onClick() {
     this.isInside = true;
@@ -23,7 +28,14 @@ export class LogoBarComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor(
+    private domSanitizer: DomSanitizer
+  ) {
+    this.searchIcon = this.domSanitizer.bypassSecurityTrustHtml(SvgIcons.SEARCH);
+    this.shoppingCartIcon = this.domSanitizer.bypassSecurityTrustHtml(SvgIcons.SHOPPING_CART);
+    this.hamburgerIcon = this.domSanitizer.bypassSecurityTrustHtml(SvgIcons.HAMBURGER);
+
+  }
 
   ngOnInit(): void {
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { SVG } from '../../shared/svg-icons';
+import { SvgIcons } from '@shared/svg-icons';
 
 @Component({
   selector: 'section-special-services',
@@ -14,19 +14,15 @@ export class SpecialServicesComponent implements OnInit {
   lifeRingIcon: SafeHtml;
 
   constructor(
-    public domSanitizer: DomSanitizer
+    public sanitizer: DomSanitizer
   ) { 
-    this.planeIcon = this.sanitizeHtml(SVG.PLANE);
-    this.clockIcon = this.sanitizeHtml(SVG.CLOCK);
-    this.lifeRingIcon = this.sanitizeHtml(SVG.LIFE_RING);
+    this.planeIcon = this.sanitizer.bypassSecurityTrustHtml(SvgIcons.PLANE);
+    this.clockIcon = this.sanitizer.bypassSecurityTrustHtml(SvgIcons.CLOCK);
+    this.lifeRingIcon = this.sanitizer.bypassSecurityTrustHtml(SvgIcons.LIFE_RING);
   }
 
   ngOnInit(): void {
     
   }
-
-  private sanitizeHtml(html: string): SafeHtml {
-    return this.domSanitizer.bypassSecurityTrustHtml(html);
-  }
-
+  
 }

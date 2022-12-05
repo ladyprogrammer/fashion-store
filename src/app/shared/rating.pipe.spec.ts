@@ -4,7 +4,7 @@ import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { RatingPipe } from './rating.pipe';
 
 describe('RatingPipe', () => {
-  let domSanitizer: DomSanitizer;
+  let sanitizer: DomSanitizer;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -13,11 +13,11 @@ describe('RatingPipe', () => {
       ]
     });
 
-    domSanitizer = TestBed.inject(DomSanitizer);
+    sanitizer = TestBed.inject(DomSanitizer);
   });
 
   it('create an instance', () => {
-    const pipe = new RatingPipe(domSanitizer);
+    const pipe = new RatingPipe(sanitizer);
     expect(pipe).toBeTruthy();
   });
 });
