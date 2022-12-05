@@ -23,7 +23,7 @@ a {
 }
 
 button {
-  @include mix.primary-button();
+  @include mix.default-button();
   cursor: pointer;
   align-self: center;
 }

@@ -1,17 +1,12 @@
 @use 'variables' as var;
 
-$hero-background-image: var.$background-url + 'hero-background.jpg';
+
 
 @mixin extend-categories-background {
   background-color: var.$white;
   margin-top: -15rem;
 }
 
-
-section-hero {
-  background: var.$white;
-  display: block;
-}
 
 .featured-section {
 
@@ -38,9 +33,5 @@ section-hero {
 }
 
 @media screen and (min-width: var.$desktop-breakpoint) {
-  section-hero {
-    background: var.$aqua url($hero-background-image) no-repeat;
-    background-size: cover;
-    margin-top: -15.2rem;
-  }
+
 }

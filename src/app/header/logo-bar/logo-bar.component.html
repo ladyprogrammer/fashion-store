@@ -10,13 +10,12 @@
       <li><a routerLink="/page">Page</a></li>
     </menu>
   </nav>
-  <span class="search" data-test="search" [innerHTML]="searchIcon">
-    <modal-search *ngIf="isShowSearch">Search</modal-search>
+  <span class="search" data-test="search" (click)="openSearchModal()">
+    <span [innerHTML]="searchIcon"></span>
+    <modal-search *ngIf="isShowSearch"></modal-search>
   </span>
-  <span class="shopping-cart" data-test="shopping-cart" [innerHTML]="shoppingCartIcon">
-
-  </span>
-  <button class="hamburger-menu" data-test="hamburger" [innerHTML]="hamburgerIcon">
-
-  </button>
+  <span class="shopping-cart" data-test="shopping-cart" 
+    [innerHTML]="shoppingCartIcon"></span>
+  <button class="hamburger-menu" data-test="hamburger" 
+    [innerHTML]="hamburgerIcon"></button>
 </div>

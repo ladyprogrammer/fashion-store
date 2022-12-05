@@ -1,25 +1,37 @@
 @use 'variables' as var;
+@use 'mixins' as mix;
 
-// @media screen and (min-width: var.$desktop-breakpoint) {
-  .container {
-    display: flex;
+$button-radius: 35px;
+$banner-background-image: var.$background-url + 'banner-background.jpg';
 
-    span {
-      flex-grow: 1;
-      line-height: 7.5rem;
-      font-weight: bold;
-      color: var.$white;
-    }
 
-    button {
-      width: 5rem;
-      height: 5rem;
-      border-radius: 5rem;
-      border: 0;
-      background-color: var.$white;
-      align-self: center;
-      font-weight: bold;
-    }
-  }
-// }
+:host {
+  background: var.$fushcia url($banner-background-image) no-repeat center top;
+}
 
+.container {
+  display: flex;
+}
+
+span {
+  flex-grow: 1;
+  line-height: 7.5rem;
+  font-weight: bold;
+  color: var.$white;
+}
+
+button {
+  @include mix.default-button(10px, 10px);
+  width: $button-radius;
+  height: $button-radius;
+  border-radius: $button-radius;
+  display: inline-flex;
+  vertical-align: middle;
+  background: var.$white;
+}
+
+:host ::ng-deep svg {   // DEPRECATED
+  fill: var.$black;
+  width: 100%;
+  height: 100%;
+}

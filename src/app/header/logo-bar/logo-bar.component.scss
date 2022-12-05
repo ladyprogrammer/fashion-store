@@ -1,4 +1,18 @@
 @use 'variables' as var;
+@use 'mixins' as mix;
+
+$icon-diameter: 20px;
+
+@mixin icon {
+  width: $icon-diameter;
+  height: $icon-diameter;
+  margin: 15px;
+}
+
+
+:host {
+  @include mix.translucent-white-background();
+}
 
 h1 {
   font-size: 2.6rem;
@@ -17,24 +31,17 @@ nav {
   }
 }
 
-.search > svg, .shopping-cart > svg, .hamburger-menu > svg {
-  width: 2rem;
-  height: 2rem;
-  padding: 0 1rem;
-}
-
 .search {
   position: relative;
+  @include icon();
+}
 
-  modal-search {
-    position: absolute;
-    background: var.$white;
-    right: 0;
-    top: 4.5rem;
-    width: 20rem;
-    z-index: 100000;
-    padding: 2.5rem;
-  }
+.shopping-cart {
+  @include icon();
+}
+
+.hamburger-menu {
+  @include icon();
 }
 
 
@@ -43,10 +50,6 @@ nav {
   .container {
     display: flex;
     align-items: center;
-
-    > * {
-      display: inline-block;
-    }
 
     h1 {
       margin: 0;
@@ -63,4 +66,9 @@ nav {
     }
   }
 
+}
+
+:host ::ng-deep svg {   // DEPRECATED
+  width: 100%;
+  height: 100%;
 }

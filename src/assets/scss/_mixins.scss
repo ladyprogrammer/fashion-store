@@ -8,6 +8,11 @@
   display: $display-type;
 }
 
+@mixin translucent-white-background {
+  background-color: rgba(var.$white, 0.5);
+  backdrop-filter: opacity(0.5);
+}
+
 @mixin default-button($padding-x: 1rem, $padding-y: 1.5rem) {
   font-weight: 900;
   font-size: 2rem;

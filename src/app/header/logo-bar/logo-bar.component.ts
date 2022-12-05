@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, Input, isDevMode, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SvgIcons } from '@shared/svg-icons';
 
@@ -7,7 +7,7 @@ import { SvgIcons } from '@shared/svg-icons';
   templateUrl: './logo-bar.component.html',
   styleUrls: ['./logo-bar.component.scss']
 })
-export class LogoBarComponent implements OnInit {
+export class LogoBarComponent {
   isShowSearch: boolean;
   isInside: boolean;
   searchIcon: SafeHtml;
@@ -39,10 +39,8 @@ export class LogoBarComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-  }
-
   openSearchModal(): void {
+    if ( isDevMode() )console.log('[LogoBarComponent] openSearchModal()');
     this.isShowSearch = ! this.isShowSearch;
   }
 

@@ -6,7 +6,6 @@ import { SearchService } from 'src/app/senvices/search.service';
   selector: 'modal-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
-  // encapsulation: ViewEncapsulation.None
 })
 export class SearchComponent implements OnInit {
   searchResult!: any[];   // TODO: refactor any

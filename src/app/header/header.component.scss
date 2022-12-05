@@ -1,12 +1,6 @@
 @use 'variables' as var;
 @use 'mixins' as mix;
 
-$banner-background-image: var.$background-url + 'banner-background.jpg';
-
-@mixin translucent-white-background {
-  background-color: rgba(var.$white, 0.5);
-  backdrop-filter: opacity(0.5);
-}
 
 header-top-banner {
   @include mix.hide-element();
@@ -19,17 +13,14 @@ header-welcome-bar{
 @media screen and (min-width: var.$desktop-breakpoint) {
   header-top-banner {
     @include mix.show-element();
-    background: var.$fushcia url($banner-background-image) no-repeat;
   }
 
   header-welcome-bar {
     @include mix.show-element();
-    @include translucent-white-background();
   }
 
   header-logo-bar {
     @include mix.show-element();
-    @include translucent-white-background();
   }
 }
 

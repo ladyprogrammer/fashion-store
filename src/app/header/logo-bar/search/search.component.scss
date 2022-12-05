@@ -1,7 +1,18 @@
-$gray: darkgray;
+@use 'variables' as var;
+
+
+:host {
+  position: absolute;
+  background: var.$white;
+  right: 0;
+  top: 4.5rem;
+  width: 20rem;
+  z-index: 100000;
+  padding: 2.5rem;
+}
 
 input {
-  border: 1px solid $gray;
+  border: 1px solid var.$gray;
   margin-bottom: 1.5rem;
   padding: 1rem;
   font-size: 1.6rem;
@@ -11,3 +22,4 @@ button {
   padding: 1rem;
   font-size: 1.6rem;
 }
+
