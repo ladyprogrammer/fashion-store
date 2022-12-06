@@ -36,6 +36,5 @@ import { BrandProductComponent } from '../home/brands/brand-product/brand-produc
   exports: [
     HomeComponent
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class MidsectionModule { }

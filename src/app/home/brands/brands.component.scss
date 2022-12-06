@@ -1,7 +1,7 @@
 @use 'variables' as var;
 @use 'mixins' as mix;
 
-
+$border-gray: rgb(208, 208, 208);
 
 .container {
   background-color: var.$white;
@@ -10,9 +10,31 @@
 
   .brands-sale-section {
     display: flex;
+    gap: 45px;
+    justify-content: space-between;
+    margin: 50px 30px;
+    border-bottom: 1px solid var.$black;
 
-    > div {
-      flex-grow: 1;
+    div {
+      &:first-child {
+        flex-grow: 1;
+      }
+  
+      &:last-child {
+        flex-grow: 1;
+      }
+    }
+
+    .products-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .column-title {
+      font-size: 2.6rem;
+      font-weight: 900;
+      text-align: center;
+      margin: 0 0 30px;
     }
   }
 
@@ -25,31 +47,39 @@
 
 
 
-.products-list {
-  display: flex;
-  flex-direction: column;
-}
-
 
 
 
 .subscribe-email-section {
   // see above for overall layout
   text-align: center;
+  padding: 80px 0 55px;
 
-  div {
-    font-weight: bold 
+  .message {
+    font-weight: 900;
+    font-size: 2.6rem;
+
+    + p {
+      // margin: 0;
+    }
   }
 
   form {
     display: flex;
+    margin: 40px auto 0;
 
     input {
-      border: 1px solid var.$gray;
+      border: 1px solid $border-gray;
+      width: 525px;
+      height: 40px;
     }
 
     button {
       @include mix.primary-button();
+      width: 120px;
+      height: 40px;
+      font-size: 1.3rem;
+      margin: 0 5px;
     }
   }
 }
