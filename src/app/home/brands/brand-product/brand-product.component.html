@@ -1,10 +1,10 @@
-<img data-test="image" src="/assets/products/product1.jpg">
-<div data-test="name">Name of Product</div>
-<div data-test="brand">Brand</div>
-<div data-test="rating">
-  <img><img><img><img><img>
-</div>
-<div>
-  <span data-test="original-price">86.7</span>
-  <span data-test="discount-price">50</span>
+<img class="image" data-test="image" [src]="'/' + product.imageUrl">
+<div class="details">
+  <div class="name" data-test="name">{{ product.name }}</div>
+  <div class="brand" data-test="brand">{{ product.brand }}</div>
+  <div class="rating" data-test="rating" [innerHTML]="product.rating | rating"></div>
+  <div class="prices">
+    <span class="original-price" data-test="original-price">{{ product.originalPrice| currency: 'USD' }}</span>
+    <span class="discount-price" data-test="discount-price">{{ product.discountedPrice| currency: 'USD' }}</span>
+  </div>
 </div>

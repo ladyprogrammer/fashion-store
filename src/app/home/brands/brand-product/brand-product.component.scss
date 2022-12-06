@@ -1,13 +1,62 @@
+@use 'variables' as var;
 
-.product {
+$brand-gray: #939393;
+
+:host {
   display: flex;
+  padding: 20px 0;
+  border-top: 1px solid var.$gray;
 
-  .image {
-    width: 100px;
+  &:first {
+    border-top: 0;
+  }
+}
+
+:host:first {
+  background-color: yellow;
+}
+
+.image {
+  width: 90px;
+}
+
+.details {
+  flex-grow: 1;
+  margin-left: 30px;
+
+  .name {
+    font-weight: bold;
+    font-size: 2rem;
   }
 
-  .details {
-    flex-direction: column;
-    flex-grow: 1;
+  .brand {
+    color: $brand-gray;
+    font-style: italic;
   }
+
+  .rating {
+    margin: 10px 0 25px;
+  }
+
+  .prices {
+    display:flex;
+    gap: 10px;
+
+    .original-price {
+      text-decoration: line-through;
+      color: var.$gray;
+    }
+  
+    .discount-price {
+      font-weight: bold;
+      color: var.$fushcia;
+    }
+  }
+}
+
+
+:host ::ng-deep svg {
+  width: 15px;
+  height: 15px;
+  fill: var.$yellow;
 }

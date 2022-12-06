@@ -1,16 +1,16 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RatingPipe } from '@shared/rating.pipe';
 
 import { BrandProductComponent } from './brand-product.component';
 
-fdescribe('BrandProductComponent', () => {
+describe('BrandProductComponent', () => {
   let component: BrandProductComponent;
   let fixture: ComponentFixture<BrandProductComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BrandProductComponent ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+      declarations: [ BrandProductComponent, RatingPipe ],
     })
     .compileComponents();
 

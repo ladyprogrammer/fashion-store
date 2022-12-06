@@ -1,5 +1,6 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RatingPipe } from '@shared/rating.pipe';
+import { BrandProductComponent } from './brand-product/brand-product.component';
 
 import { BrandsComponent } from './brands.component';
 
@@ -9,8 +10,7 @@ fdescribe('BrandsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BrandsComponent ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+      declarations: [ BrandsComponent, BrandProductComponent, RatingPipe ],
     })
     .compileComponents();
 

@@ -15,4 +15,6 @@ export class ProductService {
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>('api/products');    // TODO: API URL
   }
+
+
 }
