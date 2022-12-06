@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MidsectionRoutingModule } from './midsection-routing.module';
@@ -11,7 +11,8 @@ import { SharedModule } from '@shared/shared.module';
 import { ProductsPageNextComponent } from '../home/featured-products/products-page-next/products-page-next.component';
 import { ProductsPagePreviousComponent } from '../home/featured-products/products-page-previous/products-page-previous.component';
 import { LatestNewsComponent } from '../home/latest-news/latest-news.component';
-import { NewsArticle } from '../models/news-article';
+import { BrandsComponent } from '../home/brands/brands.component';
+import { BrandProductComponent } from '../home/brands/brand-product/brand-product.component';
 
 
 @NgModule({
@@ -24,6 +25,8 @@ import { NewsArticle } from '../models/news-article';
     ProductsPagePreviousComponent,
     ProductsPageNextComponent,
     LatestNewsComponent,
+    BrandsComponent,
+    BrandProductComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +35,7 @@ import { NewsArticle } from '../models/news-article';
   ],
   exports: [
     HomeComponent
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class MidsectionModule { }

@@ -3,15 +3,13 @@ import { CommonModule } from '@angular/common';
 import { DummyComponent } from './dummy/dummy.component';
 import { RatingPipe } from './rating.pipe';
 
-
-
 @NgModule({
   declarations: [
     DummyComponent,
     RatingPipe,
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     DummyComponent,

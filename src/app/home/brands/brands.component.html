@@ -1,0 +1,23 @@
+<x-container class="container">
+  <section class="brands-sale-section">
+    <ng-container *ngFor="let column of [1, 2, 3]">
+      <div data-test="brand-products" *ngIf="(column === 1) || (column === 3)">
+        <h5 data-test="title">Our Brands</h5>
+        <block-brand-product data-test="product" *ngFor="let id of [1, 2, 3, 4]"></block-brand-product>
+      </div>
+
+      <div class="sale" data-test="sale" *ngIf="(column === 2)">
+        <div style="display: inline-block; width:100%; height:  200px; text-align: center; background: red; vertical-align: middle">This is a big sale</div>
+      </div>
+    </ng-container>
+
+
+
+
+  </section>
+
+  <section class="subscribe-email-section">
+    <input data-test="email-input">
+    <button data-test="submit-button">Read More</button>
+  </section>
+</x-container>

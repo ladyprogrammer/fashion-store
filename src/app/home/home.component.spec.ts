@@ -1,7 +1,9 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HeaderModule } from '../header/header.module';
+import { BrandsComponent } from './brands/brands.component';
 import { FeaturedCategoriesComponent } from './featured-categories/featured-categories.component';
 import { FeaturedProductsComponent } from './featured-products/featured-products.component';
 import { ProductsPageNextComponent } from './featured-products/products-page-next/products-page-next.component';
@@ -23,12 +25,14 @@ describe('HomeComponent', () => {
     ProductsPagePreviousComponent,
     ProductsPageNextComponent,
     LatestNewsComponent,
+    BrandsComponent,
   ];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HomeComponent, ...unusedComponents ],
-      imports: [ HeaderModule, HttpClientTestingModule, RouterTestingModule ]
+      imports: [ HeaderModule, HttpClientTestingModule, RouterTestingModule ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
 
@@ -57,6 +61,11 @@ describe('HomeComponent', () => {
     it('should have latest news', () => {
       const latestNews = fixture.nativeElement.querySelector('[data-test="latest-news"]');
       expect(latestNews).toBeTruthy();
+    });
+
+    it('should have brands', () => {
+      const brands = fixture.nativeElement.querySelector('[data-test="brands"]');
+      expect(brands).toBeTruthy();
     });
 
   });

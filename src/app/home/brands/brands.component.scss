@@ -1,0 +1,55 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+
+
+
+.container {
+  background-color: var.$white;
+  display: flex;
+  flex-direction: column;
+
+  .brands-sale-section {
+    display: flex;
+
+    > div {
+      flex-grow: 1;
+    }
+  }
+
+  .subscribe-email-section {
+    display: flex;
+    flex-direction: column;
+    // see below for details
+  }
+}
+
+
+
+.products-list {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+.subscribe-email-section {
+  // see above for overall layout
+  text-align: center;
+
+  div {
+    font-weight: bold 
+  }
+
+  form {
+    display: flex;
+
+    input {
+      border: 1px solid var.$gray;
+    }
+
+    button {
+      @include mix.primary-button();
+    }
+  }
+}
