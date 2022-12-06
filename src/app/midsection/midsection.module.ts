@@ -10,6 +10,8 @@ import { SpecialServicesComponent } from '../home/special-services/special-servi
 import { SharedModule } from '@shared/shared.module';
 import { ProductsPageNextComponent } from '../home/featured-products/products-page-next/products-page-next.component';
 import { ProductsPagePreviousComponent } from '../home/featured-products/products-page-previous/products-page-previous.component';
+import { LatestNewsComponent } from '../home/latest-news/latest-news.component';
+import { NewsArticle } from '../models/news-article';
 
 
 @NgModule({
@@ -21,6 +23,7 @@ import { ProductsPagePreviousComponent } from '../home/featured-products/product
     FeaturedProductsComponent,
     ProductsPagePreviousComponent,
     ProductsPageNextComponent,
+    LatestNewsComponent,
   ],
   imports: [
     CommonModule,

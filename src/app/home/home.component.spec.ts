@@ -9,6 +9,7 @@ import { ProductsPagePreviousComponent } from './featured-products/products-page
 import { HeroComponent } from './hero/hero.component';
 
 import { HomeComponent } from './home.component';
+import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { SpecialServicesComponent } from './special-services/special-services.component';
 
 describe('HomeComponent', () => {
@@ -21,6 +22,7 @@ describe('HomeComponent', () => {
     FeaturedProductsComponent,
     ProductsPagePreviousComponent,
     ProductsPageNextComponent,
+    LatestNewsComponent,
   ];
 
   beforeEach(async () => {
@@ -35,14 +37,27 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should have hero, special services, featured products sections', () => {
-    const hero = fixture.nativeElement.querySelector('[data-test="hero"]');
-    const specialServices = fixture.nativeElement.querySelector('[data-test="special-services"]');
-    const featuredCategories = fixture.nativeElement.querySelector('[data-test="featured-categories"]');
-    const featuredProducts = fixture.nativeElement.querySelector('[data-test="featured-products"]');
-    expect(hero).toBeTruthy();
-    expect(specialServices).toBeTruthy();
-    expect(featuredCategories).toBeTruthy();
-    expect(featuredProducts).toBeTruthy();
+  describe('UI', () => {
+    it('should have hero', () => {
+      const hero = fixture.nativeElement.querySelector('[data-test="hero"]');
+      expect(hero).toBeTruthy();
+    });
+    it('should have special services', () => {
+      const specialServices = fixture.nativeElement.querySelector('[data-test="special-services"]');
+      expect(specialServices).toBeTruthy();
+    });
+    it('should have featured categories', () => {
+      const featuredCategories = fixture.nativeElement.querySelector('[data-test="featured-categories"]');
+      expect(featuredCategories).toBeTruthy();
+    });
+    it('should have featured products', () => {
+      const featuredProducts = fixture.nativeElement.querySelector('[data-test="featured-products"]');
+      expect(featuredProducts).toBeTruthy();
+    });
+    it('should have latest news', () => {
+      const latestNews = fixture.nativeElement.querySelector('[data-test="latest-news"]');
+      expect(latestNews).toBeTruthy();
+    });
+
   });
 });

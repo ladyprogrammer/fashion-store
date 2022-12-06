@@ -1,0 +1,20 @@
+<div class="container">
+  <header>
+    <h2 data-test="section-title">Latest News</h2>
+    <p data-test="section-tagline">The quick brown fox jumps over the lazy dog.</p>
+  </header>
+
+  <section>
+    <article *ngFor="let newsArticle of newsArticles.slice(0, 3)" data-test="article">
+      <img data-test="image" src="/assets/articles/{{ newsArticle.imageUrl }}">
+      <h6 class="title" data-test="article-title">{{ newsArticle.title }}</h6>
+      <div class="tagline" data-test="article-tagline">{{ newsArticle.tagline }}</div>
+      <p class="excerpt" data-test="excerpt">{{ newsArticle.content }}</p>
+      <footer>
+        <button class="read-more" data-test="read-more">Read More</button>
+        <button class="like" data-test="like"></button>
+        <button class="comment" data-test="comment"></button>
+      </footer>
+    </article>
+</section>
+</div>
