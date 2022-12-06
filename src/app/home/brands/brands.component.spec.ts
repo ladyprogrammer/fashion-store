@@ -4,7 +4,7 @@ import { BrandProductComponent } from './brand-product/brand-product.component';
 
 import { BrandsComponent } from './brands.component';
 
-fdescribe('BrandsComponent', () => {
+describe('BrandsComponent', () => {
   let component: BrandsComponent;
   let fixture: ComponentFixture<BrandsComponent>;
 
