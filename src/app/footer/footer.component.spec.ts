@@ -4,6 +4,7 @@ import { AddressComponent } from './address/address.component';
 
 import { FooterComponent } from './footer.component';
 import { ProductComponent } from './product/product.component';
+import { SocialNetworksComponent } from './social-networks/social-networks.component';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -16,6 +17,7 @@ describe('FooterComponent', () => {
         AddressComponent,
         AccountComponent,
         ProductComponent,
+        SocialNetworksComponent,
       ]
     })
     .compileComponents();

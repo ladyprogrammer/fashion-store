@@ -6,6 +6,7 @@ import { FooterComponent } from './footer.component';
 import { AddressComponent } from './address/address.component';
 import { AccountComponent } from './account/account.component';
 import { ProductComponent } from './product/product.component';
+import { SocialNetworksComponent } from './social-networks/social-networks.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ProductComponent } from './product/product.component';
     AddressComponent,
     AccountComponent,
     ProductComponent,
+    SocialNetworksComponent,    // TODO: not a known element
   ],
   imports: [
     CommonModule,
