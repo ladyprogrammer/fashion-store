@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { FooterRoutingModule } from './footer-routing.module';
 import { FooterComponent } from './footer.component';
+import { AddressComponent } from './address/address.component';
 
 
 @NgModule({
   declarations: [
-    FooterComponent
+    FooterComponent,
+    AddressComponent
   ],
   imports: [
     CommonModule,

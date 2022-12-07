@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AddressComponent } from './address/address.component';
 
 import { FooterComponent } from './footer.component';
 
@@ -8,7 +9,10 @@ describe('FooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FooterComponent ]
+      declarations: [ 
+        FooterComponent,
+        AddressComponent,
+      ]
     })
     .compileComponents();
 
