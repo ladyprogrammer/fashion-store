@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AccountComponent } from './account/account.component';
 import { AddressComponent } from './address/address.component';
+import { BottomMenuComponent } from './bottom-menu/bottom-menu.component';
 
 import { FooterComponent } from './footer.component';
 import { PaymentComponent } from './payment/payment.component';
@@ -20,6 +21,7 @@ describe('FooterComponent', () => {
         ProductComponent,
         SocialNetworksComponent,
         PaymentComponent,
+        BottomMenuComponent,
       ]
     })
     .compileComponents();

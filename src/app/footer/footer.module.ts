@@ -8,6 +8,7 @@ import { AccountComponent } from './account/account.component';
 import { ProductComponent } from './product/product.component';
 import { SocialNetworksComponent } from './social-networks/social-networks.component';
 import { PaymentComponent } from './payment/payment.component';
+import { BottomMenuComponent } from './bottom-menu/bottom-menu.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PaymentComponent } from './payment/payment.component';
     AccountComponent,
     ProductComponent,
     SocialNetworksComponent,
-    PaymentComponent,    // TODO: not a known element
+    PaymentComponent,
+    BottomMenuComponent,    // TODO: not a known element
   ],
   imports: [
     CommonModule,
