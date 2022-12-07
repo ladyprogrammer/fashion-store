@@ -65,6 +65,7 @@ describe('FooterComponent', () => {
     it('should have copyright section', () => {
       const copyright = fixture.nativeElement.querySelector('[data-test="copyright"]');
       expect(copyright).toBeTruthy();
+      expect((copyright as HTMLElement)?.textContent).toBeTruthy();
     });
   });
   
