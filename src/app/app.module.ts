@@ -11,6 +11,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryDataService } from './mock-data/in-memory-data.service';
+import { FooterModule } from './footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { InMemoryDataService } from './mock-data/in-memory-data.service';
     SharedModule,
     HeaderModule,
     MidsectionModule,
+    FooterModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
