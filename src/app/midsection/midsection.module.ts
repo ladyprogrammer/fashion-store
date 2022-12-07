@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MidsectionRoutingModule } from './midsection-routing.module';
@@ -13,7 +13,7 @@ import { ProductsPagePreviousComponent } from '../home/featured-products/product
 import { LatestNewsComponent } from '../home/latest-news/latest-news.component';
 import { BrandsComponent } from '../home/brands/brands.component';
 import { BrandProductComponent } from '../home/brands/brand-product/brand-product.component';
-import { BrandLogosComponent } from '../home/brand-logos/brand-logos.component';
+import { PopularBrandsComponent } from '../home/brand-logos/popular-brands.component';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { BrandLogosComponent } from '../home/brand-logos/brand-logos.component';
     LatestNewsComponent,
     BrandsComponent,
     BrandProductComponent,
-    BrandLogosComponent,
+    PopularBrandsComponent,
   ],
   imports: [
     CommonModule,

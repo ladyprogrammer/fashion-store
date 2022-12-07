@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BrandLogosComponent } from './brand-logos.component';
+import { PopularBrandsComponent } from './popular-brands.component';
 
-describe('BrandLogosComponent', () => {
-  let component: BrandLogosComponent;
-  let fixture: ComponentFixture<BrandLogosComponent>;
+describe('PopularBrandsComponent', () => {
+  let component: PopularBrandsComponent;
+  let fixture: ComponentFixture<PopularBrandsComponent>;
   const NO_OF_BRAND_LOGOS = 6;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BrandLogosComponent ]
+      declarations: [ PopularBrandsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BrandLogosComponent);
+    fixture = TestBed.createComponent(PopularBrandsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
