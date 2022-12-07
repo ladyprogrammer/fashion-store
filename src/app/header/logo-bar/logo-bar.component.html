@@ -1,14 +1,14 @@
 <div class="container">
   <h1 data-test="logo"><a routerLink="/">MeStore</a></h1>
   <nav data-test="menu">
-    <menu>
+    <ul>
       <li><a routerLink="/">Home</a></li>
       <li><a routerLink="/shop">Shop</a></li>
       <li><a routerLink="/product">Product</a></li>
       <li><a routerLink="/blog">Blog</a></li>
       <li><a routerLink="/portfolio">Portfolio</a></li>
       <li><a routerLink="/page">Page</a></li>
-    </menu>
+    </ul>
   </nav>
   <span class="search" data-test="search" (click)="openSearchModal()">
     <span [innerHTML]="searchIcon"></span>
