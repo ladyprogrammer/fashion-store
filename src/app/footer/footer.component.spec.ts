@@ -3,6 +3,7 @@ import { AccountComponent } from './account/account.component';
 import { AddressComponent } from './address/address.component';
 
 import { FooterComponent } from './footer.component';
+import { PaymentComponent } from './payment/payment.component';
 import { ProductComponent } from './product/product.component';
 import { SocialNetworksComponent } from './social-networks/social-networks.component';
 
@@ -18,6 +19,7 @@ describe('FooterComponent', () => {
         AccountComponent,
         ProductComponent,
         SocialNetworksComponent,
+        PaymentComponent,
       ]
     })
     .compileComponents();

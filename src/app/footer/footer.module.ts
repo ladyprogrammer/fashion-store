@@ -7,6 +7,7 @@ import { AddressComponent } from './address/address.component';
 import { AccountComponent } from './account/account.component';
 import { ProductComponent } from './product/product.component';
 import { SocialNetworksComponent } from './social-networks/social-networks.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SocialNetworksComponent } from './social-networks/social-networks.compo
     AddressComponent,
     AccountComponent,
     ProductComponent,
-    SocialNetworksComponent,    // TODO: not a known element
+    SocialNetworksComponent,
+    PaymentComponent,    // TODO: not a known element
   ],
   imports: [
     CommonModule,
