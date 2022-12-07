@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AccountComponent } from './account/account.component';
 import { AddressComponent } from './address/address.component';
 
 import { FooterComponent } from './footer.component';
+import { ProductComponent } from './product/product.component';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -12,6 +14,8 @@ describe('FooterComponent', () => {
       declarations: [ 
         FooterComponent,
         AddressComponent,
+        AccountComponent,
+        ProductComponent,
       ]
     })
     .compileComponents();
