@@ -1,12 +1,13 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RatingPipe } from '@shared/rating.pipe';
+import { Product } from 'src/app/models/product';
 
 import { BrandProductComponent } from './brand-product.component';
 
 describe('BrandProductComponent', () => {
   let component: BrandProductComponent;
   let fixture: ComponentFixture<BrandProductComponent>;
+  let mockProduct: Product;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -16,15 +17,26 @@ describe('BrandProductComponent', () => {
 
     fixture = TestBed.createComponent(BrandProductComponent);
     component = fixture.componentInstance;
+
+    mockProduct = {
+      id: 999,
+      name: 'Blue Dress',
+      brand: 'Uniqlo',
+      rating: 3.5,
+      originalPrice: 120,
+      discountedPrice: 89.9,
+      imageUrl: '/assets/products/product2.jpg'
+    };
+    component.product = mockProduct;
     fixture.detectChanges();
   });
 
   describe('per product UI', () => {
-    it('should have producthrow images', () => {
+    it('should have product image', () => {
       const image = fixture.nativeElement.querySelector('[data-test="image"]');
-        expect(image).toBeTruthy();
-        expect(image).toBeInstanceOf(HTMLImageElement);
-        expect((image as HTMLImageElement)?.src).toBeTruthy();
+      expect(image).toBeTruthy();
+      expect(image).toBeInstanceOf(HTMLImageElement);
+      expect((image as HTMLImageElement)?.src).toBeTruthy();
     });
 
     it('should have product name', () => {
@@ -59,4 +71,5 @@ describe('BrandProductComponent', () => {
         expect((discountPrice as HTMLElement)?.textContent).toBeTruthy();
     });
   });
+
 });

@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RatingPipe } from '@shared/rating.pipe';
+import { Product } from 'src/app/models/product';
 import { BrandProductComponent } from './brand-product/brand-product.component';
 
 import { BrandsComponent } from './brands.component';
@@ -7,6 +8,7 @@ import { BrandsComponent } from './brands.component';
 describe('BrandsComponent', () => {
   let component: BrandsComponent;
   let fixture: ComponentFixture<BrandsComponent>;
+  let mockBrandProducts: Product[];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -17,6 +19,82 @@ describe('BrandsComponent', () => {
     fixture = TestBed.createComponent(BrandsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    mockBrandProducts = [
+      {
+        id: 1000,
+        name: 'Orange Dress',
+        brand: 'Nike',
+        rating: 3.5,
+        originalPrice: 74,
+        discountedPrice: 69,
+        imageUrl: 'demo.jpg'
+      },
+      {
+        id: 1010,
+        name: 'Pink Dress',
+        brand: 'Nike',
+        rating: 3.5,
+        originalPrice: 74,
+        discountedPrice: 69,
+        imageUrl: 'demo.jpg'
+      },
+      {
+        id: 1030,
+        name: 'Peach Dress',
+        brand: 'Nike',
+        rating: 3.5,
+        originalPrice: 74,
+        discountedPrice: 69,
+        imageUrl: 'demo.jpg'
+      },
+      {
+        id: 1040,
+        name: 'White Dress',
+        brand: 'Nike',
+        rating: 3.5,
+        originalPrice: 74,
+        discountedPrice: 69,
+        imageUrl: 'demo.jpg'
+      },
+      {
+        id: 1050,
+        name: 'Yellow Dress',
+        brand: 'Nike',
+        rating: 3.5,
+        originalPrice: 74,
+        discountedPrice: 69,
+        imageUrl: 'demo.jpg'
+      },
+      {
+        id: 1060,
+        name: 'Violet Dress',
+        brand: 'Nike',
+        rating: 3.5,
+        originalPrice: 74,
+        discountedPrice: 69,
+        imageUrl: 'demo.jpg'
+      },
+      {
+        id: 1070,
+        name: 'Blue Dress',
+        brand: 'Nike',
+        rating: 3.5,
+        originalPrice: 74,
+        discountedPrice: 69,
+        imageUrl: 'demo.jpg'
+      },
+      {
+        id: 1080,
+        name: 'Red Dress',
+        brand: 'Nike',
+        rating: 3.5,
+        originalPrice: 74,
+        discountedPrice: 69,
+        imageUrl: 'demo.jpg'
+      }
+    ];
+    component.products = mockBrandProducts;
   });
 
   describe('Brands and Sale UI', () => {

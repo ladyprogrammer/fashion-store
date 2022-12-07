@@ -19,7 +19,7 @@ export class BrandsComponent implements OnInit {
     of(mockBrandProducts)
       .pipe(
         tap( (products) => {
-          if (isDevMode()) { console.log('[BrandsComponent] getProducts()', products) }
+          // if (isDevMode()) { console.log('[BrandsComponent] getProducts()', products) }
         }),
         map( (products) => products.slice(0, 4) )
       )
