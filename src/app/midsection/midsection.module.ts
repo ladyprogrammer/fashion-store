@@ -13,6 +13,7 @@ import { ProductsPagePreviousComponent } from '../home/featured-products/product
 import { LatestNewsComponent } from '../home/latest-news/latest-news.component';
 import { BrandsComponent } from '../home/brands/brands.component';
 import { BrandProductComponent } from '../home/brands/brand-product/brand-product.component';
+import { BrandLogosComponent } from '../home/brand-logos/brand-logos.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { BrandProductComponent } from '../home/brands/brand-product/brand-produc
     LatestNewsComponent,
     BrandsComponent,
     BrandProductComponent,
+    BrandLogosComponent,
   ],
   imports: [
     CommonModule,

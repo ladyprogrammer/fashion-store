@@ -68,5 +68,10 @@ describe('HomeComponent', () => {
       expect(brands).toBeTruthy();
     });
 
+    it('should have brand logos', () => {
+      const brandLogos = fixture.nativeElement.querySelector('[data-test="brand-logos"]');
+      expect(brandLogos).toBeTruthy();
+    });
+
   });
 });
