@@ -25,3 +25,33 @@
   background-color: var.$fushcia;
   color: var.$white;
 }
+
+@mixin arrange-items-vertically($item-padding-x: 0, $item-padding-y: 0) {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+
+  li {
+    padding: $item-padding-y $item-padding-x;
+  }
+}
+
+@mixin arrange-items-horizontally($item-padding-x: 1rem, $item-padding-y: 1.5rem) {
+  @include arrange-items-vertically($item-padding-x, $item-padding-y);
+  flex-direction: row;
+  align-items: center;
+}
+
+@mixin svg-mask-icon($svg-image-url, $diameter: 20px, $margin-right: 10px, $color: var.$white) {
+  content: '......';
+  background-color: $color;
+  -webkit-mask: url($svg-image-url) no-repeat;
+  mask: url($svg-image-url) no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  width: $diameter;
+  height: $diameter;
+  margin-right: $margin-right;
+}

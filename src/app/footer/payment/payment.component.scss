@@ -1,0 +1,15 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+
+$iconImage: '/assets/icons/heart.svg';
+
+.menu {
+  @include mix.arrange-items-horizontally();
+  
+  > li {
+    &::before {
+      @include mix.svg-mask-icon($iconImage);
+    }
+  }
+
+}

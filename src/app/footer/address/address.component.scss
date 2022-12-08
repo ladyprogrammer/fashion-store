@@ -1,0 +1,18 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+
+$iconImage: '/assets/icons/heart.svg';
+
+.menu {
+  @include mix.arrange-items-vertically($item-padding-y: 5px);
+  display: block;
+  
+  > div {
+    display: list-item;
+
+    &::before {
+      @include mix.svg-mask-icon($iconImage);
+    }
+  }
+
+}

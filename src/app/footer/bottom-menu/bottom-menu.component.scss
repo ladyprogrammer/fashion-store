@@ -1,0 +1,14 @@
+// this also imports styles from footer.component.scss as set in styleUrls of this component
+// before any CSS here
+
+@use 'mixins' as mix;
+
+:host {
+  align-self: center;
+}
+
+ul {
+  &.menu{
+    @include mix.arrange-items-horizontally();
+  }
+}
