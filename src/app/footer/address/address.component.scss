@@ -1,17 +1,34 @@
 @use 'variables' as var;
 @use 'mixins' as mix;
 
-$iconImage: '/assets/icons/heart.svg';
+$pinIcon: var.$icons-url + 'pin.svg';
+$phoneIcon: var.$icons-url + 'phone.svg';
+$emailIcon: var.$icons-url + 'email.svg';
+
+
+@mixin div-item {
+  display: list-item;
+}
 
 .menu {
   @include mix.arrange-items-vertically($item-padding-y: 5px);
   display: block;
-  
-  > div {
-    display: list-item;
 
+  .location {
     &::before {
-      @include mix.svg-mask-icon($iconImage);
+      @include mix.svg-mask-icon($pinIcon);
+    }
+  }
+
+  .phone {
+    &::before {
+      @include mix.svg-mask-icon($phoneIcon);
+    }
+  }
+
+  .email {
+    &::before {
+      @include mix.svg-mask-icon($emailIcon);
     }
   }
 

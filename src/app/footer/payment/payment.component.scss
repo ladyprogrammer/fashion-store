@@ -1,14 +1,25 @@
 @use 'variables' as var;
 @use 'mixins' as mix;
 
-$iconImage: '/assets/icons/heart.svg';
+$payment-icons-url: var.$icons-url + 'payments/';
+
+$payment-icons: (
+  "mastercard": $payment-icons-url + 'mastercard.svg', 
+  "discover": $payment-icons-url + 'discover.svg', 
+  "amex": $payment-icons-url + 'amex.svg', 
+  "visa": $payment-icons-url + 'visa.svg', 
+  "stripe": $payment-icons-url + 'stripe.svg', 
+  "diners": $payment-icons-url + 'diners.svg'
+);
 
 .menu {
-  @include mix.arrange-items-horizontally();
+  @include mix.arrange-items-horizontally($item-padding-y: 5px);
   
-  > li {
-    &::before {
-      @include mix.svg-mask-icon($iconImage);
+  @each $payment, $image-url in $payment-icons {
+    li.#{$payment} {
+      &::before {
+        @include mix.svg-mask-icon($image-url, 50px)
+      }
     }
   }
 

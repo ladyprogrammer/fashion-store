@@ -1,17 +1,26 @@
 @use 'variables' as var;
 @use 'mixins' as mix;
 
-$iconImage: '/assets/icons/heart.svg';
+$social-icons-url: var.$icons-url + 'social/';
+
+$social-network-icons: (
+  "facebook": $social-icons-url + 'facebook.svg', 
+  "twitter": $social-icons-url + 'twiiter.svg', 
+  "instagram": $social-icons-url + 'instagram.svg', 
+  "youtube": $social-icons-url + 'youtube.svg', 
+  "pinterest": $social-icons-url + 'pinterest.svg', 
+  "tiktok": $social-icons-url + 'tiktok.svg'
+);
 
 .menu {
   @include mix.arrange-items-vertically($item-padding-y: 5px);
   display: block;
   
-  > li {
-    display: list-item;
-
-    &::before {
-      @include mix.svg-mask-icon($iconImage);
+  @each $social-network, $image-url in $social-network-icons {
+    li.#{$social-network} {
+      &::before {
+        @include mix.svg-mask-icon($image-url)
+      }
     }
   }
 
