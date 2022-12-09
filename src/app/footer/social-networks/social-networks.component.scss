@@ -13,13 +13,18 @@ $social-network-icons: (
 );
 
 .menu {
-  @include mix.arrange-items-vertically($item-padding-y: 5px);
+  margin: 0;
   display: block;
+  @include mix.columns($no-of-columns: 2);
   
   @each $social-network, $image-url in $social-network-icons {
-    li.#{$social-network} {
-      &::before {
-        @include mix.svg-mask-icon($image-url)
+    .#{$social-network} {
+      line-height: 30px;
+
+      a {
+        &::before {
+          @include mix.svg-mask-icon($svg-image-url: $image-url, $color: var.$white)
+        }
       }
     }
   }

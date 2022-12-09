@@ -18,9 +18,13 @@ $payment-icons: (
   @each $payment, $image-url in $payment-icons {
     li.#{$payment} {
       &::before {
-        @include mix.svg-mask-icon($image-url, 50px)
+        @include mix.svg-mask-icon($image-url, 30px, 0, var.$white);
       }
     }
   }
 
+}
+
+.footer-title {
+  margin: 60px 0 0;
 }

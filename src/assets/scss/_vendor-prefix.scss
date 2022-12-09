@@ -1,0 +1,17 @@
+@mixin svg-mask($svg-image-url) {
+  -webkit-mask: url($svg-image-url) no-repeat;
+  -moz-mask: url($svg-image-url) no-repeat;
+  mask: url($svg-image-url) no-repeat;
+}
+
+@mixin mask-position($position: center) {
+  -webkit-mask-position: $position;
+  -moz-mask-position: $position;
+  mask-position: $position;
+}
+
+@mixin columns($no-of-columns: 1) {
+  -webkit-columns: $no-of-columns;
+  -moz-columns: $no-of-columns;
+  columns: $no-of-columns;
+}
