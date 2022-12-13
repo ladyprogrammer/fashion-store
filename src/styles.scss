@@ -1,9 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
-@use 'variables' as var;
-@use 'mixins' as mix;
+@use "sass:map";
+@use "variables" as var;
+@use "mixins" as mix;
+
 
 $container-width: 1170px;
 $font-family: 'Montserrat', sans-serif;
+$background-image-urls: (
+  "banner": url('/assets/backgrounds/banner.jpg'),
+  "hero": url('/assets/backgrounds/hero.jpg'),
+  "white": url('/assets/backgrounds/white.jpg'),
+  "girl": url('/assets/backgrounds/girl.jpg'),
+);
+$background-heights: (
+  "banner": 74px,
+  "hero": 1056px,
+  "white": 1100px,
+  "girl": 887px
+);
+$background-top-positions: (
+  "banner": 0,
+  "hero": map.get($background-heights, "banner"),
+  "white-1": calc( map.get($background-heights, "banner") + map.get($background-heights, "hero") ),
+  "girl": calc(
+      map.get($background-heights, "banner") + map.get($background-heights, "hero") + 
+      map.get($background-heights, "white")
+    ),
+  "white-2": calc(
+      map.get($background-heights, "banner") + map.get($background-heights, "hero") + 
+      map.get($background-heights, "white") + map.get($background-heights, "girl")
+    )
+);
 
 
 // do not change, this is for convenience in converting px to rem
@@ -14,6 +40,12 @@ html {
 body {
   font: 1.6rem $font-family;
   background-color: var.$beige;
+  background: 
+    map.get($background-image-urls, "banner") center top no-repeat,
+    map.get($background-image-urls, "hero") center map.get($background-top-positions, "hero") no-repeat,
+    map.get($background-image-urls, "white") center map.get($background-top-positions, "white-1") no-repeat,
+    map.get($background-image-urls, "girl") center map.get($background-top-positions, "girl") no-repeat,
+    map.get($background-image-urls, "white") center map.get($background-top-positions, "white-2") no-repeat,
 }
 
 a {

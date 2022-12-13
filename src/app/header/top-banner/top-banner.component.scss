@@ -2,12 +2,6 @@
 @use 'mixins' as mix;
 
 $button-radius: 35px;
-$banner-background-image: var.$background-url + 'banner-background.jpg';
-
-
-:host {
-  background: var.$fushcia url($banner-background-image) no-repeat center top;
-}
 
 .container {
   display: flex;
