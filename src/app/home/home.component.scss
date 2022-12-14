@@ -1,11 +1,15 @@
 @use 'variables' as var;
 
 
-
 @mixin extend-categories-background {
   background-color: var.$white;
   margin-top: -15rem;
 }
+
+  section-hero.container {
+    display: block;
+  }
+
 
 
 .featured-section {
@@ -31,8 +35,4 @@
       background-color: var.$white;
     }
   }
-}
-
-@media screen and (min-width: var.$desktop-breakpoint) {
-
 }

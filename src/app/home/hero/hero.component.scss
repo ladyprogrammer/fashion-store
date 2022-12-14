@@ -1,64 +1,72 @@
 @use 'variables' as var;
 @use 'mixins' as mix;
-
-@mixin word-format {
-  font-weight: 800;
-  text-transform: uppercase;
-  display: block;
-  line-height: 0.75;
-  text-align: center;
-  margin-left: -4rem;   // remove space that is naturally present in the character from container
-}
+@use 'functions' as fn;
 
 
-:host {
-  background-size: cover;
-  margin-top: -13.3rem;
-  display: block;
-}
 
-.content {
-  width: 60rem;
+/******************************************************************************
+*   Layout
+*******************************************************************************/
+
+.hero {
+  width: fn.em(600px);
+  margin: fn.em(265px) 0 fn.em(265px) fn.em(65px);
   display: flex;
   flex-direction: column;
-  padding: 26.5rem 0 26.5rem 6.5rem;
 
-  h2 {
+  &__title {
     display: flex;
     flex-direction: column;
+    align-items: center;
+  }
 
-    .fashion {
-      @include word-format();
+  &__description {
+    margin: fn.em(20px);
+  }
+
+  &__button {
+    @include mix.primary-button(fn.em(15px), fn.em(20px));
+    width: fn.em(200px);
+  }
+
+}
+
+
+
+
+/******************************************************************************
+*   Styles
+*******************************************************************************/
+
+%word-format {
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.75;
+}
+
+.hero {
+  &__title {
+    &--fashion {
+      @extend %word-format;
       font-size: 12.1rem;
       letter-spacing: -1rem;
     }
 
-    .carnival {
-      @include word-format();
-      font-size: 12.1rem;
-      letter-spacing: -1rem;
+    &--carnival {
+      @extend .hero__title--fashion;
       color: var.$fushcia;
     }
 
-    .year {
-      @include word-format();
-      color: var.$black;
+    &--year {
+      @extend %word-format;
       font-size: 5rem;
-      letter-spacing: 7.5rem;
-      margin-left: 6rem;
-      text-align: center;
+      @include mix.fix-letter-spacing-centering(7.5rem);
     }
   }
 
-  p {
-    line-height: 1.5em;
-    text-align: justify;
-  }
-
-  button {
-    @include mix.primary-button(1.5rem, 2rem);
-    width: 20rem;
-    align-self: center;
+  &__description {
+    line-height: 2.5rem;
+    text-align: center;
   }
 
 }

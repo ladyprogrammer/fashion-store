@@ -25,6 +25,10 @@
   @include default-button($padding-x, $padding-y);
   background-color: var.$fushcia;
   color: var.$white;
+
+  &:hover {
+    background-color: var.$dark-pink;
+  }
 }
 
 @mixin arrange-items-vertically($item-padding-x: 0, $item-padding-y: 0) {
@@ -57,4 +61,9 @@
 
 @mixin columns($no-of-columns: 1) {
   @include prefix.columns($no-of-columns);
+}
+
+@mixin fix-letter-spacing-centering($size-in-rem) {
+  letter-spacing: $size-in-rem;
+  text-indent: $size-in-rem;   // HACK: fix centering
 }

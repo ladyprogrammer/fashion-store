@@ -2,6 +2,7 @@ $white: white;
 $yellow: #ffc808;
 $beige: beige;
 $fushcia: #f9236f;
+$dark-pink: #E30655;
 $black: black;
 $aqua: rgb(186, 232, 255);
 $pastel-blue: #D6EEF9;
@@ -16,3 +17,9 @@ $background-url: "/assets/backgrounds/";
 $featured-category-url: "/assets/featured-categories/";
 $icons-url: "/assets/icons/";
 
+$background-heights: (
+  "banner": 74px,
+  "hero": 1056px,
+  "white": 1100px,
+  "girl": 887px
+);
