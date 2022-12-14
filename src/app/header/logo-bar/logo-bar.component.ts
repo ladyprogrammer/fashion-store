@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, Input, isDevMode, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, isDevMode } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SvgIcons } from '@shared/svg-icons';
 
@@ -10,9 +10,6 @@ import { SvgIcons } from '@shared/svg-icons';
 export class LogoBarComponent {
   isShowSearch: boolean;
   isInside: boolean;
-  searchIcon: SafeHtml;
-  shoppingCartIcon: SafeHtml;
-  hamburgerIcon: SafeHtml;
 
   @HostListener('click') onClick() {
     this.isInside = true;
@@ -29,14 +26,9 @@ export class LogoBarComponent {
 
 
   constructor(
-    private domSanitizer: DomSanitizer
   ) {
     this.isShowSearch = false;
     this.isInside = false;
-    this.searchIcon = this.domSanitizer.bypassSecurityTrustHtml(SvgIcons.SEARCH);
-    this.shoppingCartIcon = this.domSanitizer.bypassSecurityTrustHtml(SvgIcons.SHOPPING_CART);
-    this.hamburgerIcon = this.domSanitizer.bypassSecurityTrustHtml(SvgIcons.HAMBURGER);
-
   }
 
   openSearchModal(): void {

@@ -1,21 +1,18 @@
-<div class="container">
-  <h1 data-test="logo"><a routerLink="/">MeStore</a></h1>
-  <nav data-test="menu">
+<div class="logo-bar container">
+  <h1 class="logo-bar__title" data-test="logo"><a class="logo-bar__logo-link" routerLink="/">MeStore</a></h1>
+  <nav class="logo-bar__menu" data-test="menu">
     <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/shop">Shop</a></li>
-      <li><a routerLink="/product">Product</a></li>
-      <li><a routerLink="/blog">Blog</a></li>
-      <li><a routerLink="/portfolio">Portfolio</a></li>
-      <li><a routerLink="/page">Page</a></li>
+      <li class="logo-bar__list-item"><a class="logo_bar__menu-link" routerLink="/" data-test="home-link">Home</a></li>
+      <li class="logo-bar__list-item"><a class="logo_bar__menu-link" routerLink="/shop" data-test="shop-link">Shop</a></li>
+      <li class="logo-bar__list-item"><a class="logo_bar__menu-link" routerLink="/product" data-test="product-link">Product</a></li>
+      <li class="logo-bar__list-item"><a class="logo_bar__menu-link" routerLink="/blog" data-test="blog-link">Blog</a></li>
+      <li class="logo-bar__list-item"><a class="logo_bar__menu-link" routerLink="/portfolio" data-test="portfolio-link">Portfolio</a></li>
+      <li class="logo-bar__list-item"><a class="logo_bar__menu-link" routerLink="/page" data-test="page-link">Page</a></li>
     </ul>
   </nav>
-  <span class="search" data-test="search" (click)="openSearchModal()">
-    <span [innerHTML]="searchIcon"></span>
+  <button class="logo-bar__search" data-test="search" (click)="openSearchModal()">
     <modal-search *ngIf="isShowSearch"></modal-search>
-  </span>
-  <span class="shopping-cart" data-test="shopping-cart" 
-    [innerHTML]="shoppingCartIcon"></span>
-  <button class="hamburger-menu" data-test="hamburger" 
-    [innerHTML]="hamburgerIcon"></button>
+  </button>
+  <button class="logo-bar__shopping-cart" data-test="shopping-cart" ></button>
+  <button class="logo-bar__hamburger-menu" data-test="hamburger"></button>
 </div>

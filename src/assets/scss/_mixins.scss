@@ -1,5 +1,7 @@
 @use 'variables' as var;
 @use 'vendor-prefix' as prefix;
+@use 'functions' as fn;
+
 
 @mixin hide-element() {
   display: none;
@@ -14,14 +16,14 @@
   backdrop-filter: opacity(0.5);
 }
 
-@mixin default-button($padding-x: 1rem, $padding-y: 1.5rem) {
+@mixin default-button($padding-x: fn.em(10px), $padding-y: fn.em(15px)) {
   font-weight: 900;
   font-size: 2rem;
   padding: $padding-x $padding-y;
   border: 0;
 }
 
-@mixin primary-button($padding-x: 1rem, $padding-y: 1.5rem) {
+@mixin primary-button($padding-x: fn.em(10px), $padding-y: fn.em(15px)) {
   @include default-button($padding-x, $padding-y);
   background-color: var.$fushcia;
   color: var.$white;
@@ -29,6 +31,10 @@
   &:hover {
     background-color: var.$dark-pink;
   }
+}
+
+@mixin transparent-button($padding-x: fn.em(10px), $padding-y: fn.em(15px)) {
+  background-color: transparent;
 }
 
 @mixin arrange-items-vertically($item-padding-x: 0, $item-padding-y: 0) {
