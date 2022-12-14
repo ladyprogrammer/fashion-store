@@ -1,31 +1,52 @@
 @use 'variables' as var;
 @use 'mixins' as mix;
+@use 'functions' as fn;
 
-$button-radius: 35px;
+$close-icon: var.$icons-url + 'header/xmark.svg';
 
-.container {
+
+/******************************************************************************
+*   Layout
+*******************************************************************************/
+
+.top-banner {
   display: flex;
+
+  &__message {
+    flex-grow: 1;
+  }
+  
+  &__close-button {
+    display: inline-flex;
+  }
+
 }
 
-span {
-  flex-grow: 1;
-  line-height: 7.5rem;
-  font-weight: bold;
-  color: var.$white;
+
+
+/******************************************************************************
+*   Styles
+*******************************************************************************/
+
+:host {
+  background: var.$fushcia url(var.$background-url + 'banner.jpg') no-repeat;
 }
 
-button {
-  @include mix.default-button(10px, 10px);
-  width: $button-radius;
-  height: $button-radius;
-  border-radius: $button-radius;
-  display: inline-flex;
-  vertical-align: middle;
-  background: var.$white;
-}
 
-:host ::ng-deep svg {   // DEPRECATED
-  fill: var.$black;
-  width: 100%;
-  height: 100%;
+.top-banner {
+  &__message {
+    line-height: 7.5rem;
+    font-weight: bold;
+    color: var.$white;
+  }
+  
+  &__close-button {
+    @include mix.default-button(fn.em(10px), fn.em(10px));
+    border-radius: fn.em(25px);
+    background: var.$white;
+
+    &::before {
+      @include mix.svg-mask-icon($svg-image-url: $close-icon, $margin-right: 0);
+    }
+  }
 }

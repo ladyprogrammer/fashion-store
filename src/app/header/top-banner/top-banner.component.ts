@@ -1,6 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { SvgIcons } from '@shared/svg-icons';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'header-top-banner',
@@ -8,19 +6,21 @@ import { SvgIcons } from '@shared/svg-icons';
   styleUrls: ['./top-banner.component.scss'],
 })
 export class TopBannerComponent implements OnInit {
-  closeIcon: SafeHtml;
-  @ViewChild('container') container!: ElementRef;
+  @ViewChild('topBanner') divBanner!: ElementRef;
 
   constructor(
-    private sanitizer: DomSanitizer
+    private renderer: Renderer2   // TODO: implement site-wide
   ) { 
-    this.closeIcon = this.sanitizer.bypassSecurityTrustHtml(SvgIcons.XMARK);
   }
 
   ngOnInit(): void {
   }
+  
 
-  closeBanner() {
-    this.container.nativeElement.remove();
+  closeBanner(): void {
+    const parentNode = this.renderer.parentNode(this.divBanner.nativeElement);
+    const childNode = this.renderer.selectRootElement(this.divBanner.nativeElement);
+    this.renderer.removeChild(parentNode, childNode);
+    this.renderer.addClass(document.body, 'no-banner');
   }
 }

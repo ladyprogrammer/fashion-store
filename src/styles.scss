@@ -30,6 +30,18 @@ $background-top-positions: (
       map.get($background-heights, "white") + map.get($background-heights, "girl")
     )
 );
+$background-top-positions-no-banner: (
+  "hero": 0,
+  "white-1": map.get($background-heights, "hero"),
+  "girl": calc(
+      map.get($background-heights, "hero") + map.get($background-heights, "white")
+    ),
+  "white-2": calc(
+      map.get($background-heights, "hero") + map.get($background-heights, "white") + map.get($background-heights, "girl")
+    )
+);
+
+
 
 
 // do not change, this is for convenience in converting px to rem
@@ -39,13 +51,12 @@ html {
 
 body {
   font: 1.6rem $font-family;
-  background-color: var.$beige;
   background: 
-    map.get($background-image-urls, "banner") center top no-repeat,
     map.get($background-image-urls, "hero") center map.get($background-top-positions, "hero") no-repeat,
     map.get($background-image-urls, "white") center map.get($background-top-positions, "white-1") no-repeat,
     map.get($background-image-urls, "girl") center map.get($background-top-positions, "girl") no-repeat,
     map.get($background-image-urls, "white") center map.get($background-top-positions, "white-2") no-repeat,
+    var.$dirty-white
 }
 
 a {
@@ -65,4 +76,17 @@ button {
     width: $container-width;
     margin: 0 auto;
   }
+}
+
+.test {
+  background-color: hotpink;
+}
+
+.no-banner {
+  background: 
+    map.get($background-image-urls, "hero") center map.get($background-top-positions-no-banner, "hero") no-repeat,
+    map.get($background-image-urls, "white") center map.get($background-top-positions-no-banner, "white-1") no-repeat,
+    map.get($background-image-urls, "girl") center map.get($background-top-positions-no-banner, "girl") no-repeat,
+    map.get($background-image-urls, "white") center map.get($background-top-positions-no-banner, "white-2") no-repeat,
+    var.$dirty-white
 }
