@@ -16,6 +16,7 @@ import { BrandProductComponent } from '../home/brands/brand-product/brand-produc
 import { PopularBrandsComponent } from '../home/brand-logos/popular-brands.component';
 import { FeaturedCategoryComponent } from '../home/featured-categories/featured-category/featured-category.component';
 import { SpecialServiceComponent } from '../home/special-services/special-service/special-service.component';
+import { SearchResultComponent } from '../search-result/search-result.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { SpecialServiceComponent } from '../home/special-services/special-servic
     PopularBrandsComponent,
     FeaturedCategoryComponent,
     SpecialServiceComponent,
+    SearchResultComponent,
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,5 @@
-import { SearchService } from './../senvices/search.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'demo-search-result',
