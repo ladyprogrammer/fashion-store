@@ -1,0 +1,27 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+
+.title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  line-height: 0.85;
+  letter-spacing: -2px;
+
+  > span {
+    font-weight: 800;
+    font-size: 4.8rem;
+  }
+
+  > span:last-child {
+    color: var.$fushcia;
+  }
+}
+
+.content {
+  color: var.$gray;
+}
+
+.shop-button {
+  @include mix.primary-button();
+}

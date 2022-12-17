@@ -4,12 +4,5 @@
     'background': 'transparent url(' + category.backgroundImageUrl + ') no-repeat right',
     'background-size': 'contain'
    }">
-  <h5 data-test="title" class="title">
-    <span>{{ category.titleLine1 }}</span>
-    <span>{{ category.titleLine2 }}</span>
-  </h5>
-  <p data-test="content" class="content">
-    {{ category.content }}
-  </p>
-  <button data-test="button" class="shop-button" [routerLink]="['/shop']" >Shop Now</button>
+   <block-featured-category [category]="category"></block-featured-category>
 </div>

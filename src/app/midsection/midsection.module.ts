@@ -14,6 +14,7 @@ import { LatestNewsComponent } from '../home/latest-news/latest-news.component';
 import { BrandsComponent } from '../home/brands/brands.component';
 import { BrandProductComponent } from '../home/brands/brand-product/brand-product.component';
 import { PopularBrandsComponent } from '../home/brand-logos/popular-brands.component';
+import { FeaturedCategoryComponent } from '../home/featured-categories/featured-category/featured-category.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { PopularBrandsComponent } from '../home/brand-logos/popular-brands.compo
     BrandsComponent,
     BrandProductComponent,
     PopularBrandsComponent,
+    FeaturedCategoryComponent,
   ],
   imports: [
     CommonModule,
