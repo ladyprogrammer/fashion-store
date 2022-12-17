@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SvgIcons } from '@shared/svg-icons';
+import { SpecialService } from 'src/app/models/special-service';
 
 @Component({
   selector: 'section-special-services',
@@ -9,20 +9,33 @@ import { SvgIcons } from '@shared/svg-icons';
   encapsulation: ViewEncapsulation.None
 })
 export class SpecialServicesComponent implements OnInit {
-  planeIcon: SafeHtml;
-  clockIcon: SafeHtml;
-  lifeRingIcon: SafeHtml;
+  specialServices: SpecialService[];
 
   constructor(
-    public sanitizer: DomSanitizer
   ) { 
-    this.planeIcon = this.sanitizer.bypassSecurityTrustHtml(SvgIcons.PLANE);
-    this.clockIcon = this.sanitizer.bypassSecurityTrustHtml(SvgIcons.CLOCK);
-    this.lifeRingIcon = this.sanitizer.bypassSecurityTrustHtml(SvgIcons.LIFE_RING);
+    this.specialServices = [
+      { 
+        title: 'Free Shipping',
+        description: 'With &euro;50 or more orders',
+        icon: SvgIcons.PLANE
+      },
+      {
+        title: 'Free Refund',
+        description: '100% Refund within 3 days',
+        icon: SvgIcons.CLOCK
+      },
+      {
+        title: 'Support 24.7',
+        description: 'Call us anytime you want',
+        icon: SvgIcons.LIFE_RING
+      }
+    ];
   }
 
   ngOnInit(): void {
     
   }
+
+  
   
 }

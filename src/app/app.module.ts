@@ -12,6 +12,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryDataService } from './mock-data/in-memory-data.service';
 import { FooterModule } from './footer/footer.module';
+import { SpecialServiceComponent } from './home/special-services/special-service/special-service.component';
 
 @NgModule({
   declarations: [

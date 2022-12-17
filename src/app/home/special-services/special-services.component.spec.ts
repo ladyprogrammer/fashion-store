@@ -1,15 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { SpecialServiceComponent } from './special-service/special-service.component';
 
 import { SpecialServicesComponent } from './special-services.component';
 
 describe('SpecialServicesComponent', () => {
   let component: SpecialServicesComponent;
   let fixture: ComponentFixture<SpecialServicesComponent>;
+  const EXPECTED_NO_OF_SERVICES = 3;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SpecialServicesComponent ]
+      declarations: [ SpecialServicesComponent, SpecialServiceComponent ]
     })
     .compileComponents();
 
@@ -19,8 +21,7 @@ describe('SpecialServicesComponent', () => {
   });
 
   it('should have the 3 special services', () => {
-    const NUMBER_OF_DISPLAYED_SERVICES = 3;
     const specialServices = fixture.debugElement.queryAll(By.css('[data-test="special-service"]'));
-    expect(specialServices.length).toEqual(NUMBER_OF_DISPLAYED_SERVICES);
+    expect(specialServices.length).toEqual(EXPECTED_NO_OF_SERVICES);
   });
 });

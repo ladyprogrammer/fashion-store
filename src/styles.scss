@@ -71,15 +71,15 @@ button {
   align-self: center;
 }
 
+svg {
+  fill: currentColor;
+}
+
 @media screen and (min-width: var.$large-desktop-breakpoint) {
   .container {
     width: $container-width;
     margin: 0 auto;
   }
-}
-
-.test {
-  background-color: hotpink;
 }
 
 .no-banner {

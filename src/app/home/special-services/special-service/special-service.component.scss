@@ -1,0 +1,45 @@
+@use 'variables' as var;
+@use 'functions' as fn;
+
+
+
+/******************************************************************************
+*   Layout
+*******************************************************************************/
+
+.special-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.special-service__icon {
+  // text-align: center;
+  align-self: center;
+}
+
+.special-service__description {
+  // text-align: center;
+  align-self: center;
+}
+
+/******************************************************************************
+*   Styles
+*******************************************************************************/
+
+
+.special-service__icon {
+  background-color: var.$white;
+  width: fn.em(50px);
+  height: fn.em(50px);
+  border-radius: fn.em(80px);
+  line-height: 5rem;
+  padding: fn.em(40px);
+  color: var.$gray;
+}
+
+.special-service__title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+}

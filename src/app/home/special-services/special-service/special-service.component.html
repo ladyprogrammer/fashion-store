@@ -1,0 +1,6 @@
+
+<div class="special-service">
+  <div data-test="icon" class="special-service__icon" [innerHTML]="sanitizer.bypassSecurityTrustHtml(content.icon)"></div>
+  <h6 data-test="title" class="special-service__title">{{ content.title }}</h6>
+  <p data-test="description" class="special-service__description">{{ content.description }}</p>
+</div>

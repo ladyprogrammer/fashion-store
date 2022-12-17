@@ -15,6 +15,7 @@ import { BrandsComponent } from '../home/brands/brands.component';
 import { BrandProductComponent } from '../home/brands/brand-product/brand-product.component';
 import { PopularBrandsComponent } from '../home/brand-logos/popular-brands.component';
 import { FeaturedCategoryComponent } from '../home/featured-categories/featured-category/featured-category.component';
+import { SpecialServiceComponent } from '../home/special-services/special-service/special-service.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { FeaturedCategoryComponent } from '../home/featured-categories/featured-
     BrandProductComponent,
     PopularBrandsComponent,
     FeaturedCategoryComponent,
+    SpecialServiceComponent,
   ],
   imports: [
     CommonModule,
