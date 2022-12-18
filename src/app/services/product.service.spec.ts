@@ -28,8 +28,8 @@ describe('ProductService', () => {
 
     try {
       testRequest = httpMock.expectOne('api/products');
-      expect(testRequest?.request.method).withContext('method').toBe('POST');
-      testRequest?.flush(testData.mockNewProduct);
+      expect(testRequest.request.method).withContext('method').toBe('POST');
+      testRequest.flush(testData.mockNewProduct);
       httpMock.verify();
     } catch (e: any) {
       fail(e);
@@ -44,8 +44,8 @@ describe('ProductService', () => {
 
     try {
       testRequest = httpMock.expectOne('api/products/');
-      expect(testRequest?.request.method).withContext('method').toEqual('GET');
-      testRequest?.flush(testData.mockProducts);
+      expect(testRequest.request.method).withContext('method').toEqual('GET');
+      testRequest.flush(testData.mockProducts);
       httpMock.verify();
     } catch (e: any) {
       fail(e);
@@ -53,16 +53,18 @@ describe('ProductService', () => {
   });
 
   it('should search products', () => {
-    const searchText = 'tet';
-    service.read(0, 25, searchText)
+    const mockSearchText = 'tet';
+    const mockOffset = 0;
+    const mockLimit = 25
+    service.read(mockOffset, mockLimit, mockSearchText)
       .subscribe(
         (result) => expect(result).withContext('read()').toEqual(testData.mockSearchProducts)
       );
 
     try {
-      testRequest = httpMock.expectOne(`api/products?name=${searchText}`);
-      expect(testRequest?.request.method).withContext('method').toEqual('GET');
-      testRequest?.flush(testData.mockSearchProducts);
+      testRequest = httpMock.expectOne(`api/products?name=${mockSearchText}`);
+      expect(testRequest.request.method).withContext('method').toEqual('GET');
+      testRequest.flush(testData.mockSearchProducts);
       httpMock.verify();
     } catch (e: any) {
       fail(e);
@@ -70,20 +72,19 @@ describe('ProductService', () => {
   });
 
   xit('should read a product', () => {
-    // const mockId = 10000;
-    // service.read(mockId)
-    //   .subscribe(
-    //     (result) => expect(result).withContext('readOne()').toEqual(mockProduct) // TODO: error TS2345: Argument of type '{ id: number; name: string; brand: string; rating: number; originalPrice: number; }' is not assignable to parameter of type 'Expected<ArrayLike<Product>> | ArrayContaining<Product>'.
-    //   );
+    service.read(testData.mockProduct.id)
+      .subscribe(
+        (result) => expect(result).withContext('readOne()').toEqual(testData.mockProduct) 
+      );
 
-    // try {
-    //   testRequest = httpMock.expectOne(`api/products/${mockId}`);
-    //   expect(testRequest?.request.method).withContext('method').toEqual('GET');
-    //   testRequest?.flush(mockProduct);
-    //   httpMock.verify();
-    // } catch (e: any) {
-    //   fail(e);
-    // }
+    try {
+      testRequest = httpMock.expectOne(`api/products/${testData.mockProduct.id}`);
+      expect(testRequest?.request.method).withContext('method').toEqual('GET');
+      testRequest?.flush(testData.mockProduct.id);
+      httpMock.verify();
+    } catch (e: any) {
+      fail(e);
+    }
   });
 
   it('should update a product', () => {

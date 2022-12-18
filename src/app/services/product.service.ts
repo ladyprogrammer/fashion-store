@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, of, tap } from 'rxjs';
+import { TestScheduler } from 'rxjs/testing';
 import { Crud } from '../models/crud';
 import { Product } from '../models/product';
 
@@ -19,16 +20,14 @@ export class ProductService implements Crud {
     return this.http.post<Product>(this.apiUrl, product);
   }
 
-  read(start?: number, limit?: number, search?: string): Observable<Product[]>;
+  read(): Observable<Product[]>;
   read(id: number): Observable<Product>;
-  read(idOrStart?: number, limit?: number, search?: string): Observable<Product> | Observable<Product[]> {
-    let result: Observable<Product> | Observable<Product[]>;
-    if (typeof idOrStart === 'number') {
-      result =  (idOrStart === 0 && limit === undefined) ? this._readOneNew(idOrStart) : this._readManyNew(idOrStart, limit, search);
-    } else {
-      result = this._readManyNew();
-    }
-    return result;
+  read(offset?: number, limit?: number, search?: string): Observable<Product[]>;
+  read(idOrOffset?: number, limit?: number, search?: string): Observable<Product | Product[]> {
+    if (idOrOffset === undefined) return this._readManyNew(); 
+    if (idOrOffset !== 0) return this._readOneNew(idOrOffset);
+    if (search) return this._readManyNew(idOrOffset, limit, search);
+    return this._readManyNew(idOrOffset, limit);
   }
   
   update(product: Product): Observable<Product> {
@@ -39,15 +38,12 @@ export class ProductService implements Crud {
     return this.http.delete<Product>(`${this.apiUrl}/${id}`);
   }
 
-  getProducts(): Observable<Product[]> {    // TODO: remove if unused
-    return this.http.get<Product[]>('api/products');
-  }
-
-  private _readManyNew(start: number = 0, limit: number = 10, search?: string): Observable<Product[]> {
+  private _readManyNew(offset = 0, limit = 10, search?: string): Observable<Product[]> {
     const readApiUrl = (search) ? `${this.apiUrl}?name=${search}` : 'api/products/';
+    
     return this.http.get<Product[]>(readApiUrl)
       .pipe(
-        map( (products: Product[]) => products.slice(start, limit) ),
+        map( (products: Product[]) => products.slice(offset, limit) ),
       );
   }
 
