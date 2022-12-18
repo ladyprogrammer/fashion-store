@@ -31,12 +31,9 @@ export class FeaturedProductsComponent implements OnInit {
   }
 
   displayProducts(): void {
-    this.productService.getProducts()
-      .pipe(
-        tap( (products) => { if ( isDevMode() ) { console.log('[ProductService] displayProducts()', products) } })
-      )
+    this.productService.read()
       .subscribe(
-        (products) => this.featuredProducts = products
+        products => this.featuredProducts = products
       );
   }
 
