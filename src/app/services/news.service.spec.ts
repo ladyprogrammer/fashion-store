@@ -1,6 +1,7 @@
 import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { NewsArticle } from '../models/news-article';
+import { environment as env } from 'src/environments/environment';
 
 import { NewsService } from './news.service';
 import { mockDeleteNewsArticle, mockNewsArticle, mockNewsArticles, mockUpdatedNewsArticle } from './test-data/news-articles';
@@ -9,6 +10,7 @@ describe('NewsService', () => {
   let service: NewsService;
   let httpMock: HttpTestingController;
   let testRequest: TestRequest;
+  let apiUrl: string;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -16,6 +18,7 @@ describe('NewsService', () => {
     });
     service = TestBed.inject(NewsService);
     httpMock = TestBed.inject(HttpTestingController);
+    apiUrl = `${env.apiUrl}/news`;
   });
 
   it('should be able to add a news article', () => {
@@ -30,7 +33,7 @@ describe('NewsService', () => {
       );
 
     try {
-      testRequest = httpMock.expectOne('api/news');
+      testRequest = httpMock.expectOne(apiUrl);
       expect(testRequest.request.method).withContext('method').toBe('POST');
       testRequest.flush(mockNewsArticle);
       httpMock.verify();
@@ -47,7 +50,7 @@ describe('NewsService', () => {
       );
       
       try {
-        testRequest = httpMock.expectOne('api/news');
+        testRequest = httpMock.expectOne(apiUrl);
         expect(testRequest.request.method).withContext('method').toBe('GET');
         testRequest.flush(mockNewsArticles);
         httpMock.verify();
@@ -65,7 +68,7 @@ describe('NewsService', () => {
       );
       
       try {
-        testRequest = httpMock.expectOne(`api/news?title=${mocksearchText}`);
+        testRequest = httpMock.expectOne(`${apiUrl}?title=${mocksearchText}`);
         expect(testRequest.request.method).withContext('method').toBe('GET');
         httpMock.verify();
       } catch (error: unknown) {
@@ -79,7 +82,7 @@ describe('NewsService', () => {
       );
 
       try {
-        testRequest = httpMock.expectOne(`api/news/${mockNewsArticle.id}`);
+        testRequest = httpMock.expectOne(`${apiUrl}/${mockNewsArticle.id}`);
         expect(testRequest.request.method).toBe('GET');
         testRequest.flush(mockNewsArticle);
         httpMock.verify();
@@ -96,7 +99,7 @@ describe('NewsService', () => {
     );
 
     try {
-      testRequest = httpMock.expectOne(`api/news/${mockUpdatedNewsArticle.id}`);
+      testRequest = httpMock.expectOne(`${apiUrl}/${mockUpdatedNewsArticle.id}`);
       expect(testRequest.request.method).toBe('PATCH');
       testRequest.flush(mockUpdatedNewsArticle);
       httpMock.verify();
@@ -112,7 +115,7 @@ describe('NewsService', () => {
     );
 
     try {
-      testRequest = httpMock.expectOne(`api/news/${mockDeleteNewsArticle.id}`);
+      testRequest = httpMock.expectOne(`${apiUrl}/${mockDeleteNewsArticle.id}`);
       expect(testRequest.request.method).toBe('DELETE');
       testRequest.flush(mockDeleteNewsArticle);
       httpMock.verify();

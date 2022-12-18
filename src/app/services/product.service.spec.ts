@@ -2,6 +2,7 @@ import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@an
 import { TestBed } from '@angular/core/testing';
 import { tap } from 'rxjs';
 import { Product } from '../models/product';
+import { environment as env } from 'src/environments/environment';
 
 import { ProductService } from './product.service';
 import * as testData  from './test-data/products';
@@ -10,7 +11,8 @@ import * as testData  from './test-data/products';
 describe('ProductService', () => {
   let service: ProductService;
   let httpMock: HttpTestingController;
-  let testRequest: TestRequest | undefined;
+  let testRequest: TestRequest;
+  let apiUrl: string;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -18,6 +20,7 @@ describe('ProductService', () => {
     });
     service = TestBed.inject(ProductService);
     httpMock = TestBed.inject(HttpTestingController);
+    apiUrl = `${env.apiUrl}/products`;
   });
 
   it('should create a new product', () => {
@@ -27,7 +30,7 @@ describe('ProductService', () => {
       );
 
     try {
-      testRequest = httpMock.expectOne('api/products');
+      testRequest = httpMock.expectOne(apiUrl);
       expect(testRequest.request.method).withContext('method').toBe('POST');
       testRequest.flush(testData.mockNewProduct);
       httpMock.verify();
@@ -43,7 +46,7 @@ describe('ProductService', () => {
       );
 
     try {
-      testRequest = httpMock.expectOne('api/products/');
+      testRequest = httpMock.expectOne(apiUrl);
       expect(testRequest.request.method).withContext('method').toEqual('GET');
       testRequest.flush(testData.mockProducts);
       httpMock.verify();
@@ -62,7 +65,7 @@ describe('ProductService', () => {
       );
 
     try {
-      testRequest = httpMock.expectOne(`api/products?name=${mockSearchText}`);
+      testRequest = httpMock.expectOne(`${apiUrl}?name=${mockSearchText}`);
       expect(testRequest.request.method).withContext('method').toEqual('GET');
       testRequest.flush(testData.mockSearchProducts);
       httpMock.verify();
@@ -78,7 +81,7 @@ describe('ProductService', () => {
       );
 
     try {
-      testRequest = httpMock.expectOne(`api/products/${testData.mockProduct.id}`);
+      testRequest = httpMock.expectOne(`${apiUrl}/${testData.mockProduct.id}`);
       expect(testRequest?.request.method).withContext('method').toEqual('GET');
       testRequest?.flush(testData.mockProduct.id);
       httpMock.verify();
@@ -94,7 +97,7 @@ describe('ProductService', () => {
       );
 
     try {
-      testRequest = httpMock.expectOne(`api/products/${testData.mockUpdateProduct.id}`);
+      testRequest = httpMock.expectOne(`${apiUrl}/${testData.mockUpdateProduct.id}`);
       expect(testRequest?.request.method).withContext('method').toEqual('PATCH');
       testRequest?.flush(testData.mockUpdateProduct);
       httpMock.verify();
@@ -110,7 +113,7 @@ describe('ProductService', () => {
       );
 
     try {
-      testRequest = httpMock.expectOne(`api/products/${testData.mockDeleteProduct.id}`);
+      testRequest = httpMock.expectOne(`${apiUrl}/${testData.mockDeleteProduct.id}`);
       expect(testRequest?.request.method).withContext('method').toEqual('DELETE');
       testRequest?.flush(testData.mockDeleteProduct);
       httpMock.verify();

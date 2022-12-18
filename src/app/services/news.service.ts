@@ -3,19 +3,20 @@ import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
 import { Crud } from '../models/crud';
 import { NewsArticle } from '../models/news-article';
+import { environment as env } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NewsService implements Crud {
-  private apiUrl = 'api/news';
+  private apiUrl = `${env.apiUrl}/news`;
 
   constructor(
     private http: HttpClient
   ) { }
 
   create(newsArticle: Partial<NewsArticle>): Observable<NewsArticle> {
-    return this.http.post<NewsArticle>('api/news', newsArticle);
+    return this.http.post<NewsArticle>(this.apiUrl, newsArticle);
   }
 
   read() : Observable<NewsArticle[]>;
@@ -29,24 +30,24 @@ export class NewsService implements Crud {
   }
 
   update(newsArticle: NewsArticle): Observable<NewsArticle> {
-    return this.http.patch<NewsArticle>(`api/news/${newsArticle.id}`, newsArticle);
+    return this.http.patch<NewsArticle>(`${this.apiUrl}/${newsArticle.id}`, newsArticle);
   }
 
   delete(id: number): Observable<NewsArticle> {
-    return this.http.delete<NewsArticle>(`api/news/${id}`);
+    return this.http.delete<NewsArticle>(`${this.apiUrl}/${id}`);
   }
 
   private _readMany(offset = 0, limit = 100, search?: string): Observable<NewsArticle[]> {
-    const apiUrl = (search) ? `api/news?title=${search}` : 'api/news';
+    const apiSearchUrl = (search) ? `${this.apiUrl}?title=${search}` : this.apiUrl;
 
-    return this.http.get<NewsArticle[]>(apiUrl)
+    return this.http.get<NewsArticle[]>(apiSearchUrl)
       .pipe(
         map( newsArticles => newsArticles.slice(offset, limit) )
       )
   }
 
   private _readOne(id: number): Observable<NewsArticle> {
-    return this.http.get<NewsArticle>(`api/news/${id}`);
+    return this.http.get<NewsArticle>(`${this.apiUrl}/${id}`);
   }
 
 }

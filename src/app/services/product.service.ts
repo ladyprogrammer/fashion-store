@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, of, tap } from 'rxjs';
-import { TestScheduler } from 'rxjs/testing';
+import { environment as env } from 'src/environments/environment';
 import { Crud } from '../models/crud';
 import { Product } from '../models/product';
 
@@ -9,7 +9,7 @@ import { Product } from '../models/product';
   providedIn: 'root'
 })
 export class ProductService implements Crud {
-  apiUrl = 'api/products';
+  private apiUrl = `${env.apiUrl}/products`;
 
   constructor(
     private http: HttpClient
@@ -39,7 +39,7 @@ export class ProductService implements Crud {
   }
 
   private _readManyNew(offset = 0, limit = 10, search?: string): Observable<Product[]> {
-    const readApiUrl = (search) ? `${this.apiUrl}?name=${search}` : 'api/products/';
+    const readApiUrl = (search) ? `${this.apiUrl}?name=${search}` : this.apiUrl;
     
     return this.http.get<Product[]>(readApiUrl)
       .pipe(
