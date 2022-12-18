@@ -2,7 +2,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HeaderModule } from '../header/header.module';
+import { HeaderModule } from '../../sections/header/header.module';
 import { BrandsComponent } from './brands/brands.component';
 import { FeaturedCategoriesComponent } from './featured-categories/featured-categories.component';
 import { FeaturedProductsComponent } from './featured-products/featured-products.component';
