@@ -1,8 +1,8 @@
 import { Observable } from "rxjs";
 
 export interface Crud {
-  create(O: unknown): Observable<unknown>;
-  read(O?: unknown): Observable<unknown>;
-  update(O: unknown): Observable<unknown>;
-  delete(O: unknown): Observable<unknown>;
+  create(Q: unknown): Observable<unknown>;
+  read(Q?: unknown): Observable<unknown>;
+  update(Q: unknown): Observable<unknown>;
+  delete(Q: unknown): Observable<unknown>;
 }

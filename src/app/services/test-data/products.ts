@@ -1,3 +1,33 @@
+export const mockProduct = {
+  id: 10000,
+  name: 'Blue T-Shirt',
+  brand: 'Marvel',
+  rating: 4.7,
+  originalPrice: 79.99
+}
+
+export const mockNewProduct = {
+  name: 'Pink Pants',
+  brand: 'Levis',
+  originalPrice: 500,
+};
+
+export const mockUpdateProduct = {
+  id: 9999,
+  name: 'Red Dress',
+  brand: 'Valentino',
+  rating: 4.8,
+  originalPrice: 200
+}
+
+export const mockDeleteProduct = {
+  id: 1,
+  name: 'Green Suit',
+  brand: 'Barneys',
+  rating: 3,
+  originalPrice: 20
+}
+
 export const mockSubsetProducts = [
   {"id":1,"name":"Gilia brecciarum M.E. Jones ssp. jacens (A.D. Grant & V.E. Grant) Day","brand":"Kazio","rating":2,"originalPrice":8758,"imageUrl":"http://dummyimage.com/410x173.png/ff4444/ffffff"},
   {"id":2,"name":"Sophora nuttalliana B.L. Turner","brand":"Mycat","rating":5,"originalPrice":9187,"imageUrl":"http://dummyimage.com/516x138.png/5fa2dd/ffffff"},

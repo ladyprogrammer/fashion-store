@@ -4,8 +4,8 @@ import { tap } from 'rxjs';
 import { Product } from '../models/product';
 
 import { ProductService } from './product.service';
-import { mockProduct, mockNewProduct, mockUpdateProduct, mockDeleteProduct } from './test-data/product';
-import { mockProducts, mockSubsetProducts, mockSearchProducts } from './test-data/products';
+import * as testData  from './test-data/products';
+
 
 describe('ProductService', () => {
   let service: ProductService;
@@ -21,15 +21,15 @@ describe('ProductService', () => {
   });
 
   it('should create a new product', () => {
-    service.create(mockNewProduct)
+    service.create(testData.mockNewProduct)
       .subscribe(
-        (result) => expect(result).withContext('create()').toEqual(mockNewProduct as Product)
+        (result) => expect(result).withContext('create()').toEqual(testData.mockNewProduct as Product)
       );
 
     try {
       testRequest = httpMock.expectOne('api/products');
       expect(testRequest?.request.method).withContext('method').toBe('POST');
-      testRequest?.flush(mockNewProduct);
+      testRequest?.flush(testData.mockNewProduct);
       httpMock.verify();
     } catch (e: any) {
       fail(e);
@@ -39,13 +39,13 @@ describe('ProductService', () => {
   it('should read a list of products', () => {
     service.read()
       .subscribe(
-        (result) => expect(result).withContext('read()').toEqual(mockSubsetProducts)
+        (result) => expect(result).withContext('read()').toEqual(testData.mockSubsetProducts)
       );
 
     try {
       testRequest = httpMock.expectOne('api/products/');
       expect(testRequest?.request.method).withContext('method').toEqual('GET');
-      testRequest?.flush(mockProducts);
+      testRequest?.flush(testData.mockProducts);
       httpMock.verify();
     } catch (e: any) {
       fail(e);
@@ -56,13 +56,13 @@ describe('ProductService', () => {
     const searchText = 'tet';
     service.read(0, 25, searchText)
       .subscribe(
-        (result) => expect(result).withContext('read()').toEqual(mockSearchProducts)
+        (result) => expect(result).withContext('read()').toEqual(testData.mockSearchProducts)
       );
 
     try {
       testRequest = httpMock.expectOne(`api/products?name=${searchText}`);
       expect(testRequest?.request.method).withContext('method').toEqual('GET');
-      testRequest?.flush(mockSearchProducts);
+      testRequest?.flush(testData.mockSearchProducts);
       httpMock.verify();
     } catch (e: any) {
       fail(e);
@@ -87,15 +87,15 @@ describe('ProductService', () => {
   });
 
   it('should update a product', () => {
-    service.update(mockUpdateProduct)
+    service.update(testData.mockUpdateProduct)
       .subscribe(
-        (result) => expect(result).withContext('update()').toEqual(mockUpdateProduct)
+        (result) => expect(result).withContext('update()').toEqual(testData.mockUpdateProduct)
       );
 
     try {
-      testRequest = httpMock.expectOne(`api/products/${mockUpdateProduct.id}`);
+      testRequest = httpMock.expectOne(`api/products/${testData.mockUpdateProduct.id}`);
       expect(testRequest?.request.method).withContext('method').toEqual('PATCH');
-      testRequest?.flush(mockUpdateProduct);
+      testRequest?.flush(testData.mockUpdateProduct);
       httpMock.verify();
     } catch (e: any) {
       fail(e);
@@ -103,15 +103,15 @@ describe('ProductService', () => {
   });
 
   it('should delete a product', () => {
-    service.delete(mockDeleteProduct.id)
+    service.delete(testData.mockDeleteProduct.id)
       .subscribe(
-        (result) => expect(result).withContext('delete()').toEqual(mockDeleteProduct)
+        (result) => expect(result).withContext('delete()').toEqual(testData.mockDeleteProduct)
       );
 
     try {
-      testRequest = httpMock.expectOne(`api/products/${mockDeleteProduct.id}`);
+      testRequest = httpMock.expectOne(`api/products/${testData.mockDeleteProduct.id}`);
       expect(testRequest?.request.method).withContext('method').toEqual('DELETE');
-      testRequest?.flush(mockDeleteProduct);
+      testRequest?.flush(testData.mockDeleteProduct);
       httpMock.verify();
     } catch (e: any) {
       fail(e);
