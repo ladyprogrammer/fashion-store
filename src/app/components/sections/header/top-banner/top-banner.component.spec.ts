@@ -21,7 +21,7 @@ describe('TopBannerComponent', () => {
 
   describe('content', () => {
     it('should be present', () => {
-      const content = fixture.debugElement.query(By.css('[data-test="message"]'));
+      const content = fixture.nativeElement.querySelector('[data-test="message"]');
       expect(content).toBeTruthy();
     });
   });
@@ -30,24 +30,21 @@ describe('TopBannerComponent', () => {
     let closeButton: unknown;
 
     beforeEach(() => {
-      closeButton = fixture.debugElement.query(By.css('[data-test="close-button"]'));
+      closeButton = fixture.nativeElement.querySelector('[data-test="close-button"]');
     });
 
     it('should be present', () => {
       expect(closeButton).toBeTruthy();
-      expect((closeButton as DebugElement)?.nativeElement)
-        .withContext('should be button element')
-        .toBeInstanceOf(HTMLButtonElement);
+      expect(closeButton).withContext('should be button element').toBeInstanceOf(HTMLButtonElement);
     });
 
-    xit('should close the banner if clicked', waitForAsync(() => {
-      // (closeButton as DebugElement)?.triggerEventHandler('click', null);
-      (closeButton as DebugElement)?.nativeElement.click();
+    it('should close the banner if clicked', waitForAsync(() => {
+      (<HTMLButtonElement>closeButton).click();
       fixture.detectChanges();
         
       fixture.whenStable().then(() => {
         fixture.detectChanges();
-        const topBanner = fixture.debugElement.query(By.css('[data-test="top-banner"]'));
+        const topBanner = fixture.nativeElement.querySelector('[data-test="top-banner"]');
         expect(topBanner).toBeFalsy();
       });
     }) );
