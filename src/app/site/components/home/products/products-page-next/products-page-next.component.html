@@ -1,0 +1,10 @@
+<div class="featured-product" data-test="featured-product" *ngFor="let product of featuredProducts?.slice(4)">
+  <div><img src="/assets/products/{{ product.imageUrl }}" /></div>
+  <div class="product">{{ product.name }}</div>
+  <div class="brand">{{ product.brand }}</div>
+  <div class="rating"  [innerHTML]="product.rating"></div>
+  <div class="price">
+    <span class="original">{{ product.originalPrice| currency: 'USD' }}</span>
+    <span class="discounted">{{ product.discountedPrice| currency: 'USD' }}</span>
+  </div>
+</div>

@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { FooterModule } from './components/sections/footer/footer.module';
-import { HeaderModule } from './components/sections/header/header.module';
-import { MidsectionModule } from './components/sections/midsection/midsection.module';
+import { FooterModule } from './shared/footer/footer.module';
+import { HeaderModule } from './shared/header/header.module';
+import { SiteModule } from './site/site.module';
 
 
 describe('AppComponent', () => {
@@ -15,7 +15,7 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         HeaderModule,
-        MidsectionModule,
+        SiteModule,
         FooterModule
       ],
       declarations: [

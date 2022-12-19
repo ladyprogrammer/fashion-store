@@ -1,16 +1,13 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderModule } from './components/sections/header/header.module';
-import { MidsectionModule } from './components/sections/midsection/midsection.module';
-import { SharedModule } from './shared/shared.module';
-
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { HttpClientModule } from '@angular/common/http';
-import { InMemoryDataService } from './mock-data/in-memory-data.service';
-import { FooterModule } from './components/sections/footer/footer.module';
+import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { InMemoryDataService } from "@shared/mock-data/in-memory-data.service";
+import { SharedModule } from "@shared/shared.module";
+import { SiteModule } from "@site/site.module";
+import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 
 @NgModule({
   declarations: [
@@ -18,10 +15,8 @@ import { FooterModule } from './components/sections/footer/footer.module';
   ],
   imports: [
     BrowserModule,
+    SiteModule,
     SharedModule,
-    HeaderModule,
-    MidsectionModule,
-    FooterModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
