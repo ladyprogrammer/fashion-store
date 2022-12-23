@@ -18,8 +18,6 @@ export class BrandsComponent implements OnInit {
   getProducts(): void {
     of(mockBrandProducts)
       .pipe(
-        tap( (products) => {
-        }),
         map( (products) => products.slice(0, 4) )
       )
       .subscribe( (products) => this.products = products );

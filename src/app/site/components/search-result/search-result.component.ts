@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SearchService } from '@shared/services/search.service';
 
 @Component({
-  selector: 'demo-search-result',
+  selector: 'page-search-result',
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.scss']
 })
