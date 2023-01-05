@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { FeaturedProductsComponent } from './featured-products.component';
-import { ProductsPageNextComponent } from './products-page-next/products-page-next.component';
+import { ProductsPageNextComponent } from '../../../ui/products-page-next/products-page-next.component';
 import { ProductsPagePreviousComponent } from './products-page-previous/products-page-previous.component';
 
 describe('FeaturedProductsComponent', () => {

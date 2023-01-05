@@ -10,7 +10,7 @@ import { HeroComponent } from './hero/hero.component';
 import { HomeComponent } from './home.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { FeaturedProductsComponent } from './products/featured-products.component';
-import { ProductsPageNextComponent } from './products/products-page-next/products-page-next.component';
+import { ProductsPageNextComponent } from '../../ui/products-page-next/products-page-next.component';
 import { ProductsPagePreviousComponent } from './products/products-page-previous/products-page-previous.component';
 import { SpecialServicesComponent } from './special-services/special-services.component';
 

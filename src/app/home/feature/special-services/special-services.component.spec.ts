@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { SpecialServiceComponent } from './special-service/special-service.component';
+import { SpecialServiceComponent } from '../../../ui/special-service/special-service.component';
 
 import { SpecialServicesComponent } from './special-services.component';
 

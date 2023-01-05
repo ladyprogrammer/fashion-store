@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { FooterModule } from './shared/footer/footer.module';
 import { HeaderModule } from './shared/header/header.module';
-import { SiteModule } from './site/site.module';
+import { SiteModule } from './home/home.module';
 
 
 describe('AppComponent', () => {

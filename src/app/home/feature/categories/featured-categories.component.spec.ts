@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { FeaturedCategoriesComponent } from './featured-categories.component';
-import { FeaturedCategoryComponent } from './featured-category/featured-category.component';
+import { FeaturedCategoryComponent } from '../../../ui/featured-category/featured-category.component';
 
 describe('FeaturedCategoriesComponent', () => {
   let component: FeaturedCategoriesComponent;

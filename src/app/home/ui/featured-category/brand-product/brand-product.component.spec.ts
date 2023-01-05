@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Product } from '@shared/models/product';
-import { RatingPipe } from '@site/pipes/rating.pipe';
+import { RatingPipe } from 'src/app/home/ui/pipes/rating.pipe';
 
 import { BrandProductComponent } from './brand-product.component';
 

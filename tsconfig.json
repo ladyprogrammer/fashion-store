@@ -26,7 +26,7 @@
       "@shared/*": [ "src/app/shared/*" ],
       "@core/*": [ "src/app/core/*" ],
       "@admin/*": [ "src/app/admin/*" ],
-      "@site/*": [ "src/app/site/*" ],
+      "@site/*": [ "src/app/home/*" ],
     },
     "useDefineForClassFields": false
   },
